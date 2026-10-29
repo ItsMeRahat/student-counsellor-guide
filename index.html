@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="bn"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a2540">
+<title>Student Counsellor গাইডলাইন</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>:root{--bg:#f3f5f9;--card:#fff;--tx:#14213d;--mu:#5a6a85;--pr:#0f5c8a;--pr2:#e8f1f8;--ok:#0b7a5c;--ok2:#e3f5ee;--wr:#92540a;--wr2:#fff3dc;--bd:#e0e6ef;--hd:#fff;--ac:#e8a317;--sh:0 1px 2px rgba(15,40,80,.05),0 8px 24px rgba(15,40,80,.06);--hero:linear-gradient(135deg,#0a2540 0%,#0f4c75 60%,#127a8a 100%);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1220;--card:#141d30;--tx:#e7edf8;--mu:#9aa9c4;--pr:#6cc0f0;--pr2:#1b2a44;--ok:#4fd1a1;--ok2:#10302a;--wr:#fbbf6a;--wr2:#33260f;--bd:#25324d;--hd:#0c1220;--sh:none;--hero:linear-gradient(135deg,#0b1d36,#12395b 60%,#0f5560)}}
+:root[data-theme="dark"]{--bg:#0c1220;--card:#141d30;--tx:#e7edf8;--mu:#9aa9c4;--pr:#6cc0f0;--pr2:#1b2a44;--ok:#4fd1a1;--ok2:#10302a;--wr:#fbbf6a;--wr2:#33260f;--bd:#25324d;--hd:#0c1220;--sh:none;--hero:linear-gradient(135deg,#0b1d36,#12395b 60%,#0f5560)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 62px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Inter","Noto Sans Bengali",system-ui,sans-serif;line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:30}
+#bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ac),#14b8a6);z-index:32}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:31;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);display:flex;gap:6px;overflow-x:auto;padding:10px 12px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;text-decoration:none;color:var(--mu);border:1px solid var(--bd);border-radius:10px;padding:4px 13px;font-size:13px;font-weight:500;transition:.2s}
+nav a{-webkit-tap-highlight-color:transparent}@media (hover:hover){nav a:hover{color:var(--pr);border-color:var(--pr)}}
+nav a.on{background:var(--pr);border-color:var(--pr);color:var(--hd);font-weight:600}
+nav a.x{background:var(--ac);border-color:var(--ac);color:#2a1d00;font-weight:600}
+.w{max-width:860px;margin:0 auto;padding:16px 14px 30px}
+.hero{position:relative;background:var(--hero);color:#fff;border-radius:24px;padding:28px 22px 22px;margin-bottom:18px;box-shadow:var(--sh);overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(232,163,23,.35),transparent 70%);pointer-events:none}
+.hero>*{position:relative;z-index:1}
+.hero h1{margin:0;font-size:clamp(22px,6vw,34px);line-height:1.3;letter-spacing:-.01em}
+.co{margin:4px 0 0;font-size:clamp(13px,3.8vw,16px);opacity:.9}
+.kw{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.kw span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:8px;padding:2px 11px;font-size:12px;font-weight:500}
+.pg{margin-top:18px;background:rgba(255,255,255,.1);border-radius:14px;padding:11px 14px}.pg>div{height:8px;background:rgba(255,255,255,.2);border-radius:9px;overflow:hidden}
+.pg i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ac),#5eead4);border-radius:9px;transition:width .6s}
+.pg small{display:block;margin-top:6px;font-size:12.5px;opacity:.95}
+#th{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);border-radius:12px;width:36px;height:36px;cursor:pointer;font-size:16px;color:#fff;z-index:2}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:6px 20px 10px;margin-bottom:16px;box-shadow:var(--sh)}
+h2{margin:0;padding:14px 0;font-size:19px;font-weight:700;color:var(--tx);line-height:1.4;display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none}
+h2::after{content:"";margin-left:auto;width:9px;height:9px;border-right:2px solid var(--mu);border-bottom:2px solid var(--mu);transform:rotate(-135deg) translate(-2px,-2px);transition:transform .25s;flex:none}
+.card.c h2::after{transform:rotate(45deg)}.card.c .bd{display:none}
+.no{flex:none;width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--pr),#14b8a6);color:var(--hd);font-size:14px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+.card.g .no{background:var(--ok)}
+.bd{padding-bottom:10px;border-top:1px solid var(--bd);padding-top:8px}
+h3{margin:20px 0 8px;font-size:15.5px;font-weight:700;color:var(--pr);display:flex;align-items:center;gap:8px}
+h3::before{content:"";width:4px;height:16px;border-radius:3px;background:var(--ac);flex:none}
+p{margin:6px 0}ul,ol{margin:6px 0;padding-left:22px}li{margin:4px 0}li::marker{color:var(--pr)}
+.steps{list-style:none;padding:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:6px 0 14px 46px;margin:0;font-weight:500}
+.steps li::before{content:counter(s);position:absolute;left:0;top:3px;width:32px;height:32px;border-radius:50%;background:var(--card);border:2px solid var(--pr);color:var(--pr);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.steps li::after{content:"";position:absolute;left:15px;top:37px;bottom:2px;width:2px;background:var(--bd)}
+.steps li:last-child::after{display:none}
+.tw{overflow-x:auto;margin:10px 0;border:1px solid var(--bd);border-radius:14px}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:14px;min-width:440px}
+th{background:var(--pr2);color:var(--pr);padding:9px 12px;text-align:left;font-weight:700;border-bottom:1px solid var(--bd)}
+td,th{padding:9px 12px;vertical-align:top;text-align:left}
+td{border-bottom:1px solid var(--bd)}tr:last-child td{border-bottom:0}
+tr:hover td{background:var(--pr2)}
+.sc,.tip,.warn,.gl,.mg{border-radius:14px;padding:11px 15px;font-size:14.5px;margin:10px 0;border-left:4px solid}
+.sc{background:var(--pr2);border-color:var(--pr)}
+.tip{background:var(--ok2);color:var(--ok);border-color:var(--ok)}
+.warn,.mg{background:var(--wr2);color:var(--wr);border-color:var(--ac)}
+.gl{background:var(--pr2);border-color:var(--pr)}
+.task{border:1.5px dashed var(--pr);border-radius:14px;padding:12px 15px;margin:12px 0;font-size:14.5px;background:linear-gradient(var(--pr2),transparent)}
+.task button,.b{font:inherit;font-size:13px;font-weight:600;border-radius:10px;cursor:pointer}
+.task button{display:block;margin-top:9px;border:1px solid var(--pr);background:var(--card);color:var(--pr);padding:3px 15px}
+.task.d{border-style:solid;border-color:var(--ok);background:var(--ok2)}.task.d button{background:var(--ok);border-color:var(--ok);color:var(--hd)}
+.chip{display:inline-block;background:var(--pr2);color:var(--pr);border-radius:8px;padding:1px 11px;margin:3px 2px;font-size:13.5px;font-weight:500}
+.sm{font-size:13px;color:var(--mu)}
+.info{font:inherit;font-size:12px;font-weight:600;border:1px solid var(--pr);color:var(--hd);background:var(--pr);border-radius:8px;padding:0 10px;margin-left:6px;cursor:pointer;white-space:nowrap;vertical-align:middle}
+.info:active,.hb:active{transform:scale(.96)}
+#md{position:fixed;inset:0;background:rgba(8,14,30,.6);backdrop-filter:blur(3px);z-index:40;display:flex;align-items:flex-end;justify-content:center}
+#md[hidden]{display:none}
+.sh{background:var(--card);width:100%;max-width:640px;max-height:86%;overflow-y:auto;border-radius:24px 24px 0 0;padding:18px 20px calc(20px + env(safe-area-inset-bottom,0px));animation:up .25s}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:17px;color:var(--pr)}
+#mx{border:0;background:var(--pr2);color:var(--tx);border-radius:10px;width:32px;height:32px;cursor:pointer}
+.st label{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--bd);font-size:15px;cursor:pointer}
+.st input{margin-top:6px;width:18px;height:18px;accent-color:var(--ok);flex:none}
+.st input:checked+span{color:var(--mu);text-decoration:line-through}
+.ck{margin-top:10px}
+#up{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:14px;border:0;background:var(--pr);color:var(--hd);font-size:20px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.25s;z-index:35}
+#up.on{opacity:1;pointer-events:auto}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.sh{animation:none}}
+footer{text-align:center;color:var(--mu);font-size:13px;padding:16px}
+kbd{background:var(--pr2);border:1px solid var(--bd);border-bottom-width:2px;border-radius:6px;padding:0 6px;font:600 11.5px monospace;color:var(--tx);white-space:nowrap}
+.kk{margin-left:auto;text-align:right;flex:none;max-width:46%;font-style:normal;font-size:12px;line-height:2}
+.st label{flex-wrap:nowrap}.st label span{flex:1}
+.sh.big{max-width:780px;max-height:94%}
+.ms{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.ms span{font-size:12px;border:1px solid var(--bd);border-radius:8px;padding:0 10px;color:var(--mu)}.ms span.ok{background:var(--ok2);color:var(--ok);border-color:var(--ok)}
+.bx{border:1px solid var(--bd);border-radius:14px;padding:12px;margin:10px 0}
+.rw{border:1px solid var(--bd);border-radius:12px;padding:8px 12px;margin:6px 0;font-size:14.5px;cursor:pointer;transition:.15s}.rw:hover{border-color:var(--pr);background:var(--pr2)}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}.kp div{background:var(--pr2);border-radius:12px;text-align:center;font-size:11px;padding:8px 2px}.kp b{display:block;font-size:19px;color:var(--pr)}
+.b{border:0;background:var(--pr);color:var(--hd);padding:5px 14px;margin:2px 0}.b.s{background:var(--pr2);color:var(--pr)}
+.tb{display:flex;gap:6px;margin:10px 0}.rs{margin-top:12px}
+#mb input:not([type=checkbox]),#mb select,#mb textarea{font:inherit;font-size:14px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:10px;padding:6px 10px;max-width:100%}
+.hb{font:inherit;font-size:13px;border:0;border-radius:10px;padding:6px 14px;background:#fff;color:#0a2540;cursor:pointer;font-weight:600}
+.hb.g{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.hr{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+#cd{margin:12px 0 0;font-size:13.5px;opacity:.95}
+.in2{width:100%;margin-top:12px;border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:9px 13px;font:inherit;font-size:14px;background:rgba(255,255,255,.96);color:#14213d}
+#cn{margin-top:10px}
+#sr{font-size:12px;opacity:.9;margin-top:4px}
+.qo{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 13px;font-size:14.5px;border-radius:12px;background:var(--pr2);color:var(--tx);border:1px solid transparent}
+.qo.ok{background:var(--ok2);color:var(--ok);border-color:var(--ok)}.qo.no{background:var(--wr2);color:var(--wr);border-color:var(--ac)}
+@media (min-width:1100px){
+nav{position:fixed;top:0;left:0;bottom:0;width:236px;flex-direction:column;overflow-y:auto;padding:70px 14px 20px;border-right:1px solid var(--bd);border-bottom:0;gap:4px}
+nav::before{content:"Student Counsellor Academy";position:absolute;top:22px;left:18px;font-weight:700;font-size:15px;color:var(--pr)}
+nav a{border:0;border-radius:10px;padding:6px 12px}
+body{padding-left:236px}.w{max-width:900px}
+body::before{left:236px}#bar{left:236px}
+}
+@media print{nav,#up,#bar,#th,.hr,#sq,#cn,.task button,.info{display:none!important}body{padding:0;background:#fff}.card,.rv{box-shadow:none;opacity:1;transform:none}.card.c .bd{display:block}}
+
+/* v2 refinements */
+.ht{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.hero h1{white-space:nowrap;min-width:0;font-size:clamp(15px,5.2vw,34px)}
+#th{position:static;flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;padding:0;font-size:17px}
+.hr{display:grid;grid-template-columns:repeat(3,1fr) 42px;gap:6px;margin-top:16px}
+.hb{padding:9px 4px;font-size:12.5px;text-align:center;white-space:nowrap;border-radius:12px}
+.hb.g{display:grid;place-items:center;padding:0}
+.tl{display:grid;gap:10px;margin-top:14px}
+.fld{display:flex;align-items:center;gap:10px;height:48px;padding:0 14px;border-radius:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);color:rgba(255,255,255,.8);transition:.2s;cursor:text}
+.fld:hover{background:rgba(255,255,255,.17)}
+.fld:focus-within{background:rgba(255,255,255,.22);border-color:var(--ac);box-shadow:0 0 0 3px rgba(232,163,23,.3);color:#fff}
+.fld svg{flex:none}
+.fld input{flex:1;min-width:0;height:100%;background:none;border:0;outline:0;color:#fff;font:inherit;font-size:15px}
+.fld input::placeholder{color:rgba(255,255,255,.62)}
+.fld kbd{display:none;background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);color:#fff}
+#sr{margin-top:8px;color:#fff}
+nav a.x{display:none}
+footer{padding:20px 12px 72px;line-height:1.7}
+.dv{margin-top:6px;font-size:13px;letter-spacing:.04em}.dv b{color:var(--pr);letter-spacing:.14em}
+@media (max-width:600px){.hero{padding:22px 16px 18px}}
+@media (min-width:640px){.tl{grid-template-columns:1fr 1fr}.fld kbd{display:inline-block}.hb{font-size:13.5px}}
+@media (min-width:1100px){nav a.x{display:block}}
+.xq{display:flex;align-items:center;gap:8px;margin:8px 0 4px;border:1px solid var(--bd);border-radius:14px;padding:0 10px 0 14px;height:46px;background:var(--bg)}
+.xq:focus-within{border-color:var(--pr);box-shadow:0 0 0 3px var(--pr2)}
+.xq input{flex:1;min-width:0;height:100%;border:0;outline:0;background:none;color:var(--tx);font:inherit;font-size:14.5px}
+.xr{border:1px solid var(--bd);border-radius:12px;padding:9px 12px;margin:7px 0;cursor:pointer;transition:.15s}
+.xr:hover{border-color:var(--pr)}.xr.cp{border-color:var(--ok);background:var(--ok2)}
+.xr .k{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.xr code{font:600 13.5px/1.6 ui-monospace,Menlo,Consolas,monospace;color:var(--pr);background:var(--pr2);padding:1px 8px;border-radius:7px;word-break:break-word}
+.xr .d{font-size:14px;margin-top:3px}.xr .e{font-size:12.5px;color:var(--mu);margin-top:3px}
+.xr .e code{font-size:12.5px;color:var(--ok);background:var(--ok2)}
+.xr .k kbd{font-size:12.5px}
+</style></head><body>
+<div id="bar"></div>
+<nav id="nav"><a href="#" class="op x" data-p="assign">📝 Assignment</a><a href="#" class="op x" data-p="quiz">🧠 Quiz</a><a href="#" class="op x" data-p="plan">🗓 Planner</a><a href="#s1">Workflow</a><a href="#s2">Calling</a><a href="#s3">Profile</a><a href="#s4">University</a><a href="#s5">Documents</a><a href="#s6">Application</a><a href="#s7">CRM</a><a href="#s8">Software</a><a href="#s9">CRM Docs</a><a href="#s10">Excel·PDF·Mail</a><a href="#s11">Schedule</a><a href="#s12">Excel Guide</a></nav>
+<div class="w">
+<header class="hero">
+<div class="ht"><h1>Student Counsellor গাইডলাইন</h1><button id="th" aria-label="Theme" title="Dark / Light">🌓</button></div>
+<p class="co">AHZ Associates, GEC Chattogram</p>
+<div class="kw"><span>UK Admission</span><span>Software</span><span>Practical</span></div>
+<div class="hr"><button class="hb op" data-p="assign">📝 Assignment</button><button class="hb op" data-p="quiz">🧠 Quiz</button><button class="hb op" data-p="plan">🗓 Planner</button><button class="hb g" id="ex" aria-label="সব খুলুন / বন্ধ করুন" title="সব খুলুন / বন্ধ করুন"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg></button></div><div class="tl"><label class="fld"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><input id="cn" placeholder="আপনার নাম লিখুন" autocomplete="name" aria-label="আপনার নাম"></label><label class="fld"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="sq" placeholder="গাইডলাইনে খুঁজুন…" autocomplete="off" enterkeyhint="search" aria-label="সার্চ"><kbd>/</kbd></label></div><div id="sr"></div>
+<div class="pg"><div><i id="pf"></i></div><small id="pt"></small></div>
+</header>
+<section id="s1" class="card"><h2><span class="no">1</span>সম্পূর্ণ Workflow</h2><div class="bd"><ol class="steps"><li>New Lead Receive</li><li>Student Calling</li><li>Initial Counselling</li><li>Profile Assessment</li><li>University ও Course Research</li><li>Document Collection</li><li>Application Preparation</li><li>Application Submission</li><li>Offer Follow-up</li><li>Offer Conditions পূরণ</li><li>Pre-CAS (প্রযোজ্য হলে)</li><li>CAS ও Visa (প্রযোজ্য হলে)</li></ol><p class="sm">সবশেষে Final Follow-up ও Reporting। সব শিক্ষার্থীর ক্ষেত্রে ধাপ ও ক্রম একই হবে না।</p></div></section><section id="s2" class="card"><h2><span class="no">2</span>Student Calling ও Lead Conversion</h2><div class="bd">
+<p><b>Lead</b> = UK-তে পড়তে আগ্রহী সম্ভাব্য শিক্ষার্থী (Name, Phone, Qualification, Interest, Intake, Status: New)।</p>
+<h3>প্রথম ফোনের Script</h3>
+<div class="sc"><b>Counsellor:</b> Hello, am I speaking with [Name]?<br>
+<b>Counsellor:</b> My name is [Your Name], calling from AHZ Associates regarding your interest in studying in the UK. Is this a convenient time to talk?<br>
+<b>Counsellor:</b> May I know your highest academic qualification and which course you are interested in pursuing in the UK?</div>
+<h3>এরপর যা জিজ্ঞাসা করবেন</h3>
+<ul><li>Final academic result কত? কোন বিষয়ে পড়েছেন?</li><li>IELTS বা অন্য English test দিয়েছেন কি?</li><li>কোন Intake-এ যেতে চান?</li><li>পছন্দের University বা City আছে কি?</li></ul>
+<h3>ফোনের সমাপ্তি</h3>
+<div class="sc">Thank you for sharing your information. I will review your profile and check the relevant university requirements. We can then discuss the suitable options and next steps.</div>
+<div class="tip">কোনো Admission নিশ্চিত করা হয়নি; যাচাইয়ের ভিত্তিতে পরবর্তী ধাপের কথা বলা হয়েছে।</div>
+<h3>Lead Conversion</h3>
+<p><b>New → Contacted → Counselling Completed → Document Collection → Application</b></p>
+<div class="warn">ফোন না ধরলে Contacted বা Counselling Completed দেখানো যাবে না (অফিসের Status Definition অনুযায়ী)। প্রতিটি ফোনের ফলাফল আলাদাভাবে রেকর্ড করুন।</div>
+<div class="task"><b>অনুশীলন:</b> Script ৫ বার জোরে পড়ুন, তারপর না দেখে নিজের ভাষায় বলুন।</div>
+
+</div></section><section id="s3" class="card"><h2><span class="no">3</span>Student Profile Assessment</h2><div class="bd">
+<p>UK-তে পড়তে চাইলেই যেকোনো University-তে আবেদন করা যায় না। প্রাথমিকভাবে নিন:</p>
+<p><span class="chip">SSC/HSC Result</span><span class="chip">Bachelor’s ও CGPA</span><span class="chip">IELTS (যাচাইকৃত?)</span><span class="chip">Preferred Course</span><span class="chip">Intake</span><span class="chip">Study Gap</span><span class="chip">Work Experience</span></p>
+<h3>শুধু Result দেখে University Suggest করবেন না</h3>
+<ol><li>Bachelor’s-এর বিষয় জানুন</li><li>University ও Course-এর নাম জানুন</li><li>Official Entry Requirements দেখুন</li><li>English Requirements যাচাই করুন</li><li>অন্যান্য শর্ত দেখুন</li><li>প্রয়োজনে Admissions Team-এর সঙ্গে যোগাযোগ করুন</li></ol>
+<div class="tip">চূড়ান্ত Admission Decision নেয় University। Counsellor সঠিক তথ্যের ভিত্তিতে উপযুক্ত বিকল্প খুঁজতে সাহায্য করে।</div>
+<h3>Financial Background</h3>
+<ul><li>Tuition Fee-এর আনুমানিক Budget কত?</li><li>খরচ কীভাবে চলবে: পরিবার, নিজের সঞ্চয় নাকি অন্য উৎস?</li></ul>
+<p class="sm">সংবেদনশীল আর্থিক তথ্য কেবল প্রয়োজনীয় ও অনুমোদিত ক্ষেত্রে নিন।</p>
+<div class="task"><b>অনুশীলন:</b> একটি কাল্পনিক Profile বানান, তারপর এক বাক্যে লিখুন: পরবর্তী পদক্ষেপ কী এবং কোন তথ্য যাচাই বাকি।</div>
+
+</div></section><section id="s4" class="card"><h2><span class="no">4</span>University ও Course Selection</h2><div class="bd">
+<div class="tw"><table><tr><th>বিষয়</th><th>কী যাচাই করবেন</th></tr>
+<tr><td>Course</td><td>পছন্দের বিষয় আছে কি না</td></tr>
+<tr><td>Academic Requirements</td><td>Degree ও Result গ্রহণযোগ্য কি না</td></tr>
+<tr><td>English Requirements</td><td>IELTS বা বিকল্প পরীক্ষার শর্ত</td></tr>
+<tr><td>Tuition Fee</td><td>Budget-এর সঙ্গে সামঞ্জস্য</td></tr>
+<tr><td>Intake ও Duration</td><td>কাঙ্ক্ষিত Intake আছে কি না, সময়কাল</td></tr>
+<tr><td>Location ও Deadline</td><td>শিক্ষার্থীর পছন্দ; আবেদনের শেষ তারিখ</td></tr>
+<tr><td>Additional Requirements</td><td>Work Experience, Portfolio ইত্যাদি</td></tr></table></div>
+<h3>Excel Comparison Sheet <button class="info" data-p="excelcmp" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></h3>
+<div class="tw"><table><tr><th>University</th><th>Course</th><th>Tuition Fee</th><th>Entry Req.</th><th>English Req.</th><th>Intake</th><th>Source ও তারিখ</th></tr>
+<tr><td>University A</td><td>MSc Management</td><td>যাচাই</td><td>যাচাই</td><td>যাচাই</td><td>যাচাই</td><td>Official Website</td></tr></table></div>
+<p class="sm">University A/B/C কেবল নমুনা নাম। প্রতিটি তথ্য Official Website থেকে যাচাই করুন।</p>
+<h3>“Which university is best for me?” — উত্তর</h3>
+<div class="sc">The most suitable university depends on your academic profile, preferred course, budget, and career goals. I would like to review these details and compare the relevant requirements before recommending suitable options.</div>
+<div class="task"><b>অনুশীলন:</b> তিনটি University-র Official Website থেকে একটি করে Course খুঁজে Entry Requirements, Tuition Fee ও Intake লিখুন।</div>
+
+</div></section><section id="s5" class="card"><h2><span class="no">5</span>Documentation ও File Management</h2><div class="bd">
+<p><span class="chip">Passport</span><span class="chip">Certificates</span><span class="chip">Transcripts</span><span class="chip">English Test Certificate</span><span class="chip">CV</span><span class="chip">SOP</span><span class="chip">Reference Letters</span><span class="chip">Work Experience Docs</span><span class="chip">University-নির্দিষ্ট Docs</span></p>
+<p class="sm">সব শিক্ষার্থীর সব Document লাগে না।</p>
+<h3>Document Checklist</h3>
+<div class="tw"><table><tr><th>Document</th><th>Received?</th><th>Checked?</th><th>Action</th></tr>
+<tr><td>Passport</td><td>Yes/No</td><td>Yes/No</td><td>প্রয়োজন অনুযায়ী</td></tr>
+<tr><td>Certificate / Transcript</td><td>Yes/No</td><td>Yes/No</td><td>প্রয়োজন অনুযায়ী</td></tr>
+<tr><td>IELTS</td><td>Yes/No/N.A.</td><td>Yes/No</td><td>প্রয়োজন অনুযায়ী</td></tr>
+<tr><td>CV / SOP</td><td>Yes/No</td><td>Yes/No</td><td>প্রয়োজন অনুযায়ী</td></tr></table></div>
+<h3>File Naming</h3>
+<div class="sc">ST001_Passport.pdf · ST001_Bachelor_Certificate.pdf · ST001_Bachelor_Transcript.pdf · ST001_CV.pdf · ST001_SOP.docx</div>
+<p class="sm">Student ID ব্যবহার করুন; ফাইলের নামে Passport Number বা সংবেদনশীল তথ্য দেবেন না।</p>
+<div class="warn">SOP-এর Grammar, Clarity ও Structure উন্নত করা যায়, কিন্তু শিক্ষার্থীর প্রকৃত অভিজ্ঞতা ও উদ্দেশ্য অক্ষুণ্ণ রাখতে হবে। মিথ্যা বা বানানো তথ্য লেখা যাবে না।</div>
+
+</div></section><section id="s6" class="card"><h2><span class="no">6</span>Application, Offer, Pre-CAS ও Visa</h2><div class="bd">
+<h3>Submit করার আগের Checklist</h3>
+<ul><li>নাম ও Passport Details সঠিক</li><li>Academic Qualification, Course ও Intake সঠিক</li><li>Contact Information সঠিক</li><li>Required Documents ও Supporting Statement যুক্ত</li><li>Application Fee বা অন্য শর্ত পূরণ</li></ul>
+<div class="warn">Submit করার আগে অফিসের অনুমোদিত Review Process মানুন। বাস্তব আবেদনে গুরুত্বপূর্ণ তথ্য বদলানোর আগে অনুমতি নিন।</div>
+<h3>Application Tracking <button class="info" data-p="exceltrk" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></h3>
+<div class="tw"><table><tr><th>ID</th><th>University</th><th>Course</th><th>Date</th><th>Status</th><th>Next Action</th></tr>
+<tr><td>ST001</td><td>Univ. A</td><td>MSc Mgmt</td><td>28-10-2026</td><td>Submitted</td><td>Portal Check</td></tr>
+<tr><td>ST002</td><td>Univ. B</td><td>MSc Computing</td><td>28-10-2026</td><td>Docs Pending</td><td>Follow-up</td></tr></table></div>
+<h3>Offer না এলে</h3>
+<ol><li>Submission Status যাচাই করুন</li><li>Portal-এ Update ও Additional Document-এর অনুরোধ দেখুন</li><li>প্রয়োজনে Admissions Team-কে Email করুন</li><li>শিক্ষার্থীকে সঠিক Update জানান</li><li>CRM-এ যোগাযোগের তথ্য রাখুন</li></ol>
+<div class="tip">Offer-এর সময় University অনুযায়ী ভিন্ন; যাচাই ছাড়া নির্দিষ্ট সময়ের প্রতিশ্রুতি দেবেন না।</div>
+<h3>Pre-CAS Mock Interview-র প্রশ্ন</h3>
+<ul><li>Why have you chosen this university? / this course?</li><li>How is this course related to your previous education?</li><li>What are your future career plans?</li><li>How do you plan to fund your studies?</li><li>Why have you chosen the UK?</li></ul>
+<div class="tip">উত্তর হবে পরিষ্কার, সামঞ্জস্যপূর্ণ ও সত্য। মুখস্থ বা বানানো উত্তর শেখানো যাবে না।</div>
+<h3>Visa Document Preparation</h3>
+<p>Bank Statement ও Financial Evidence, Sponsorship Details (প্রযোজ্য হলে), CAS Information, Passport ও অন্যান্য Supporting Documents।</p>
+<div class="warn">কোন নথি, কত অর্থ ও কোন সময়সীমা প্রযোজ্য, তা UK Government-এর বর্তমান নিয়ম ও শিক্ষার্থীর পরিস্থিতি অনুযায়ী যাচাই করুন। আর্থিক নথির সত্যতা বা Visa Eligibility যাচাই ছাড়া সিদ্ধান্ত দেবেন না।</div>
+
+</div></section><section id="s7" class="card"><h2><span class="no">7</span>CRM, Daily Target ও Reporting</h2><div class="bd">
+<p><b>CRM-এ যা রাখবেন:</b> Name ও ID, Contact Details, Lead Source, Academic Profile, Course ও Intake, Contact History, Application Status, Pending Documents, Next Follow-up Date। কেবল অনুমোদিত তথ্য ও প্রয়োজনীয় নথি সংরক্ষণ করুন।</p>
+<h3>Daily Report (নমুনা) <button class="info" data-p="excelrpt" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></h3>
+<div class="tw"><table><tr><th>Activity</th><th>Total</th><th>Activity</th><th>Total</th></tr>
+<tr><td>New Leads Received</td><td>10</td><td>Counselling Sessions</td><td>3</td></tr>
+<tr><td>Students Contacted</td><td>8</td><td>Document Follow-ups</td><td>4</td></tr>
+<tr><td>Successful Conversations</td><td>5</td><td>Applications Submitted</td><td>2</td></tr></table></div>
+<p class="sm">প্রতিটি সংখ্যার অর্থ হবে অফিসের সংজ্ঞা অনুযায়ী। Dial করা Lead আর Successful Conversation এক নয়।</p>
+<p><b>কাজ শেষে:</b> CRM Update → Pending Task চিহ্নিত → পরের দিনের Follow-up List → প্রয়োজনে Team Leader-কে Report।</p>
+
+</div></section><section id="s8" class="card g"><h2><span class="no">8</span>কাজে ব্যবহৃত সফটওয়্যার</h2><div class="bd">
+<div class="tw"><table><tr><th>সফটওয়্যার</th><th>কী কাজে লাগে</th><th>দক্ষতার স্তর</th><th></th></tr>
+<tr><td><b>CRM</b> (অফিসের নির্ধারিত)</td><td>Lead, Contact History, Document, Application Status ও Follow-up রাখা</td><td>প্রধান — প্রতিদিন</td><td><button class="info" data-p="crm" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></td></tr>
+<tr><td><b>Microsoft Excel / Google Sheets</b></td><td>Comparison Sheet, Tracking Sheet, Daily Report</td><td>মধ্যম</td><td><button class="info" data-p="excel" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></td></tr>
+<tr><td><b>PDF Tool</b> (Adobe Acrobat বা অনুমোদিত Tool)</td><td>Merge, Compress, Extract Pages</td><td>মৌলিক</td><td><button class="info" data-p="pdf" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></td></tr>
+<tr><td><b>Email</b> (Outlook / Gmail)</td><td>Admissions Team ও শিক্ষার্থীর সঙ্গে যোগাযোগ</td><td>প্রতিদিন</td><td><button class="info" data-p="email" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></td></tr>
+<tr><td><b>Microsoft Word / Google Docs</b></td><td>CV, SOP Review, Letter</td><td>মৌলিক</td><td><button class="info" data-p="word" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></td></tr>
+<tr><td><b>Cloud Drive</b> (Google Drive / OneDrive)</td><td>Document শেয়ার ও Backup (অনুমোদিত হলে)</td><td>মৌলিক</td><td><button class="info" data-p="cloud" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></td></tr>
+<tr><td><b>University Portal</b></td><td>Application Submit, Status ও Offer Check</td><td>Joining-এর পরে শিখতে হবে</td><td><button class="info" data-p="portal" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></td></tr>
+<tr><td><b>WhatsApp / Messenger</b></td><td>শিক্ষার্থীর সঙ্গে Document সংগ্রহ (অফিস নীতি অনুযায়ী)</td><td>প্রতিদিন</td><td><button class="info" data-p="msg" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></td></tr></table></div>
+<div class="warn">অফিসের CRM-এর নাম ও Feature Joining-এর সময় জেনে নিন। নিচের ধাপগুলো সাধারণ CRM-এর কাঠামো ধরে লেখা; মূল ধারণা প্রায় সব CRM-এ একই।</div>
+
+</div></section><section id="s9" class="card g"><h2><span class="no">9</span>CRM-এ Document Handling (ধাপে ধাপে)</h2><div class="bd">
+<p>CRM মূলত Document-এর তথ্য ও ফাইল এক জায়গায় রাখতে ব্যবহার হয়। এই ক্রমে শিখুন:</p>
+<h3>ধাপ ১: Login ও Dashboard চেনা</h3>
+<ul><li>নিজের ID দিয়ে Login করুন (পাসওয়ার্ড কাউকে দেবেন না)</li><li>Dashboard-এ Lead List, Task, Follow-up এবং Notification কোথায়, দেখে নিন</li></ul>
+<h3>ধাপ ২: Student Profile খোলা <button class="info" data-p="crm" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></h3>
+<ul><li>Search Box-এ Name, Phone বা Student ID লিখে Profile খুলুন</li><li>Profile-এর Tab চিনুন: Basic Info, Academic, Documents, Applications, Notes/History</li></ul>
+<h3>ধাপ ৩: Document Upload <button class="info" data-p="crm" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></h3>
+<ol><li>Student Profile → <b>Documents</b> Tab খুলুন</li><li>Document-এর ধরন নির্বাচন করুন (Passport, Transcript ইত্যাদি)</li><li>ফাইল Upload করুন (নাম হবে <b>ST001_Passport.pdf</b> ফরম্যাটে)</li><li>Upload শেষে ফাইল খুলে দেখুন পড়া যাচ্ছে কি না</li><li>সঠিক Student-এর Profile-এ Upload হয়েছে কি না নিশ্চিত হোন</li></ol>
+<h3>ধাপ ৪: Document Status Update <button class="info" data-p="crm" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></h3>
+<div class="tw"><table><tr><th>Status</th><th>অর্থ</th></tr>
+<tr><td>Pending</td><td>এখনো শিক্ষার্থীর কাছ থেকে আসেনি</td></tr>
+<tr><td>Received</td><td>পাওয়া গেছে, এখনো যাচাই হয়নি</td></tr>
+<tr><td>Verified</td><td>যাচাই শেষ, ব্যবহারযোগ্য</td></tr>
+<tr><td>Rejected / Re-upload</td><td>অস্পষ্ট বা ভুল; নতুন কপি দরকার</td></tr></table></div>
+<p class="sm">নামগুলো অফিসের CRM অনুযায়ী ভিন্ন হতে পারে।</p>
+<h3>ধাপ ৫: Note ও Follow-up লেখা</h3>
+<ul><li>কোন Document বাকি, শিক্ষার্থীকে কী বলা হয়েছে, তা Note-এ লিখুন</li><li>Next Follow-up Date ও সময় সেট করুন</li></ul>
+<div class="sc"><b>নমুনা Note:</b> 28-10-2026 — Student contacted. Passport &amp; transcript received. IELTS pending. Next follow-up: 31-10-2026.</div>
+<h3>ধাপ ৬: Application-এর সঙ্গে Document যুক্ত করা</h3>
+<ul><li>Application Record খুলে প্রয়োজনীয় Document সংযুক্ত করুন</li><li>University Portal-এ Upload-এর আগে Checklist মিলিয়ে নিন এবং Reviewer-এর অনুমোদন নিন</li></ul>
+<h3>প্রতিদিনের Document Routine</h3>
+<ol><li>Pending Document-এর তালিকা বের করুন (Filter ব্যবহার করুন)</li><li>শিক্ষার্থীদের Reminder দিন</li><li>নতুন Document Upload ও Status Update করুন</li><li>Notes ও Follow-up Date হালনাগাদ করুন</li></ol>
+<div class="warn"><b>নিরাপত্তা:</b> Passport ও আর্থিক নথি সংবেদনশীল। শুধু অনুমোদিত CRM/Drive-এ রাখুন, ব্যক্তিগত ফোন বা অননুমোদিত অ্যাপে নয়। ভুল Student-এর Profile-এ Upload করবেন না। কাজ শেষে Logout করুন।</div>
+<div class="task"><b>অনুশীলন:</b> Demo বা Sample Profile-এ ২টি Document Upload করুন, Status বদলান, একটি Note ও Follow-up Date দিন।</div>
+
+</div></section><section id="s10" class="card g"><h2><span class="no">10</span>Excel, PDF Tool, Email ও Cloud শেখার ধাপ</h2><div class="bd">
+<h3>Excel / Google Sheets <button class="info" data-p="excel" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></h3>
+<ol><li><b>প্রথম দিন:</b> Row/Column, Cell, Sheet; Data Entry; Column Width; Header Bold</li><li><b>Format:</b> Filter, Sort, Freeze Row, Date Format, Colour দিয়ে Status চিহ্নিত করা</li><li><b>Formula:</b> SUM, COUNT, COUNTIF (যেমন কতজন “Submitted”), IF</li><li><b>Tracking Sheet:</b> কলাম: Student ID, Name, Course, Intake, Status, Next Follow-up</li><li><b>Daily Report Sheet:</b> COUNTIF দিয়ে Leads, Contacted ও Submitted স্বয়ংক্রিয় গণনা</li></ol>
+<div class="task"><b>অনুশীলন:</b> ১০ জন কাল্পনিক শিক্ষার্থীর Tracking Sheet বানিয়ে Filter ও COUNTIF চালান।</div>
+<h3>PDF Tool <button class="info" data-p="pdf" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></h3>
+<ol><li><b>Merge:</b> একাধিক PDF নির্বাচন → Combine/Merge → ক্রম ঠিক করুন → Save</li><li><b>Compress:</b> Size বেশি হলে Reduce File Size → পড়ার মান ঠিক আছে কি না দেখুন</li><li><b>Extract Pages:</b> দরকারি Page নির্বাচন → Extract → নতুন নামে Save</li><li><b>যাচাই:</b> Page Order, অস্পষ্ট Page, বাদ পড়া Page দেখুন</li></ol>
+<p class="sm">ফোনের ছবি PDF করতে অনুমোদিত Scanner অ্যাপ ব্যবহার করুন, আর Scan পরিষ্কার ও সোজা কি না দেখুন।</p>
+<h3>Email (Outlook / Gmail) <button class="info" data-p="email" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></h3>
+<div class="tw"><table><tr><th>অংশ</th><th>নিয়ম</th></tr>
+<tr><td>Subject</td><td>স্পষ্ট, যেমন: “Application Query – ST001 – MSc Management Jan 2027”</td></tr>
+<tr><td>শুরু</td><td>Dear Admissions Team,</td></tr>
+<tr><td>মূল অংশ</td><td>২–৪ লাইনে উদ্দেশ্য ও প্রয়োজনীয় তথ্য</td></tr>
+<tr><td>Attachment</td><td>নাম ঠিক রাখুন; Attach করেছেন কি না পাঠানোর আগে দেখুন</td></tr>
+<tr><td>শেষ</td><td>Kind regards, নাম, পদ, AHZ Associates</td></tr></table></div>
+<div class="sc">Dear Admissions Team,<br>I am writing to check the current status of an application submitted on 28 October 2026 for MSc Management (January 2027 intake). Could you please confirm whether any additional documents are required?<br>Kind regards,<br>[Name], Student Counsellor, AHZ Associates</div>
+<p class="sm">পাঠানোর আগে: প্রাপক, Attachment ও বানান দেখুন। শিক্ষার্থীর সংবেদনশীল তথ্য ভুল ঠিকানায় যাচ্ছে কি না, বিশেষ নজর দিন।</p>
+<h3>Cloud Drive <button class="info" data-p="cloud" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></h3>
+<ul><li>Folder কাঠামো: <b>Student ID → Documents, Application, Offer</b></li><li>শেয়ার করার সময় শুধু প্রয়োজনীয় ব্যক্তিকে, অনুমোদিত Permission-এ</li><li>অপ্রয়োজনীয় পাবলিক লিংক রাখবেন না</li></ul>
+<h3>University Portal (Joining-এর পরে) <button class="info" data-p="portal" aria-label="Practical দেখুন">ⓘ <span>Practical</span></button></h3>
+<ol><li>Senior-এর সামনে একটি Application Portal-এ Login ও Navigation দেখুন</li><li>Draft Application ও Document Upload-এর জায়গা চিনুন</li><li>Status ও Offer Check শিখুন</li><li>Submit-এর আগে Reviewer-এর অনুমোদন নিন</li></ol>
+
+</div></section><section id="s11" class="card"><h2><span class="no">11</span>৫ দিনের Schedule ও প্রথম সপ্তাহ</h2><div class="bd">
+<div class="tw"><table><tr><th>দিন</th><th>বিষয়</th><th>শেষে যা পারবেন</th></tr>
+<tr><td>১</td><td>Student Calling ও Profile Assessment</td><td>Mock Counselling</td></tr>
+<tr><td>২</td><td>Email ও English Communication</td><td>Professional Email লেখা</td></tr>
+<tr><td>৩</td><td>Excel, CRM ও Follow-up</td><td>Student Tracking Sheet</td></tr>
+<tr><td>৪</td><td>University Research ও Documentation, PDF Tool</td><td>Course Comparison ও Document Checklist</td></tr>
+<tr><td>৫</td><td>Application, Offer, Pre-CAS ও Reporting</td><td>সম্পূর্ণ Case Simulation</td></tr></table></div>
+<p class="sm">প্রতিদিন ৩–৪ ঘণ্টা অনুশীলন করুন।</p>
+<h3>Joining-এর প্রথম সপ্তাহে জেনে নিন</h3>
+<ol><li>GEC ব্রাঞ্চে কোন CRM ব্যবহার হয়? Login কীভাবে পাবেন?</li><li>প্রতিদিন কতজন Lead Assign হয়?</li><li>Calling-এর নির্দিষ্ট Script আছে কি?</li><li>অনুমোদিত Partner University List কোথায়?</li><li>কোন University Portal-এ কাজ করতে হবে?</li><li>Submit-এর আগে কে Review করেন?</li><li>Daily Report-এর নির্দিষ্ট Format কী?</li><li>Document রাখার অনুমোদিত জায়গা কোনটি?</li><li>কোন কাজ নিজে করা যাবে, কোনটিতে Approval লাগবে?</li></ol>
+
+</div></section>
+<section id="s12" class="card g"><h2><span class="no">12</span>Excel Shortcut ও Formula গাইড</h2><div class="bd"><div id="xg"></div></div></section>
+<footer><div>Student Counsellor Training Guideline</div><div class="dv">Developed by <b>RAHAT</b></div></footer>
+</div>
+<button id="up" aria-label="Top">↑</button>
+<div id="md" hidden><div class="sh" role="dialog" aria-modal="true"><div class="hd"><b id="mt"></b><button id="mx" aria-label="Close">✕</button></div><div id="mb"></div></div></div>
+<script>const SIMG='🎯 নিচের Mission গুলো করুন; সম্পন্ন হলে নিজে থেকে ✓ হবে। ';
+const P={
+assign:{t:'Assignment: Tanvir Ahmed-কে প্রথম ফোন',g:'ইংরেজিতে ৬–৮ লাইনের কথোপকথন লিখুন; লাইভ চেকলিস্টে ৫টি বিষয় মিলবে, তারপর Model Answer দেখুন।',sim:1,m:[['w','৫টি বিষয় সম্পূর্ণ'],['len','৬–৮ লাইন'],['model','Model Answer দেখা']]},
+quiz:{t:'Quick Quiz',g:'৮টি প্রশ্ন; ৬টি ঠিক হলে ✓। প্রতিটি উত্তরের পরেই ব্যাখ্যা পাবেন।',sim:1,m:[['pass','৬/৮ বা বেশি']]},
+plan:{t:'৫ দিনের Study Planner',g:'প্রতিদিনের কাজে টিক দিন; দিন শেষ হলে ✓।',sim:1,m:[['d1','Day 1'],['d2','Day 2'],['d3','Day 3'],['d4','Day 4'],['d5','Day 5']]},
+crm:{t:'CRM Practice System',g:SIMG+'(টিপ: Application Submit-এর জন্য ST003 ব্যবহার করুন)',sim:1,m:[['search','Lead খুঁজুন'],['filter','Pending Docs Filter'],['up','সঠিক নামে Upload'],['ver','Verified করুন'],['note','Note লিখুন'],['fu','Follow-up Date'],['add','নতুন Lead'],['sub','Application Submit']]},
+pdf:{t:'PDF Tool Practice',g:SIMG,sim:1,m:[['merge','Merge করুন'],['comp','Compress করুন'],['ext','Page Extract'],['chk','Output যাচাই']]},
+email:{t:'Email Practice (Check & Send)',g:SIMG,sim:1,m:[['send','সব নিয়ম পাস করে Send'],['att','সঠিক নামে Attachment']]},
+cloud:{t:'Cloud Drive Practice',g:SIMG,sim:1,m:[['root','ST001 Folder'],['sub','৩টি Sub-folder'],['file','Passport ফাইল'],['share','নিরাপদ Share'],['pub','Public Link বন্ধ']]},
+portal:{t:'University Portal Simulator',g:SIMG+'(Demo Login: demo / demo123)',sim:1,m:[['login','Login'],['draft','Draft Save'],['sub','Submit (অনুমোদনসহ)'],['resp','Document Upload'],['offer','Offer দেখুন']]},
+excel:{t:'Excel: Student Tracking Sheet',g:'১০ জন কাল্পনিক শিক্ষার্থীর Tracking Sheet বানানো। ডানে দেওয়া Shortcut ব্যবহার করুন।',s:['কলাম লিখুন: Student ID, Name, Course, Intake, Status, Next Follow-up‖Tab / Enter','১০ জনের তথ্য বসান; উপরের ঘরের মান নিচে কপি করুন‖Ctrl+D','Header Bold করুন‖Ctrl+B','Filter চালু করুন‖Ctrl+Shift+L','প্রথম Row Freeze করুন‖Alt›W›F›R','Status অনুযায়ী Colour দিন‖Alt›H›H','আজকের তারিখ বসান‖Ctrl+;','লিখুন =COUNTIF(E2:E11,"Submitted"); Reference Lock করতে‖F4','Date অনুযায়ী Sort করুন‖Alt›A›S›S','ফাইল Save করুন‖Ctrl+S'],c:'COUNTIF-এর সংখ্যা হাতে গণনার সঙ্গে মেলে।',x:'<h3>সবচেয়ে দরকারি Shortcut</h3><div class="tw"><table><tr><td>Undo / Redo</td><td>'+'Ctrl+Z / Ctrl+Y'+'</td></tr><tr><td>সব নির্বাচন</td><td>Ctrl+A</td></tr><tr><td>ডেটার শেষে যান</td><td>Ctrl+↓ / →</td></tr><tr><td>শেষ পর্যন্ত নির্বাচন</td><td>Ctrl+Shift+↓</td></tr><tr><td>কলাম / Row নির্বাচন</td><td>Ctrl+Space / Shift+Space</td></tr><tr><td>নতুন Row/Column</td><td>Ctrl+Shift+Plus</td></tr><tr><td>Row/Column মুছুন</td><td>Ctrl+-</td></tr><tr><td>Format Cells</td><td>Ctrl+1</td></tr><tr><td>ঘর Edit</td><td>F2</td></tr><tr><td>খুঁজুন</td><td>Ctrl+F</td></tr><tr><td>শুরুতে যান</td><td>Ctrl+Home</td></tr><tr><td>AutoSum</td><td>Alt+=</td></tr></table></div><p class="sm">Mac-এ Ctrl-এর বদলে Cmd। Google Sheets-এও বেশিরভাগ Ctrl Shortcut কাজ করে।</p>'},
+excelcmp:{t:'Excel: University Comparison Sheet',g:'Official তথ্য যাচাই করে Course তুলনার Sheet বানানো।',s:['কলাম: University, Course, Tuition Fee, Entry Req., English Req., Intake, Source Link, Checked Date‖Tab','Official Website থেকে তথ্য বসান; Source-এ Link যোগ করুন‖Ctrl+K','যাচাইয়ের তারিখ বসান‖Ctrl+;','লম্বা লেখা ঘরের ভেতরে ভাঁজ করুন (Wrap Text)‖Alt›H›W','কলামের প্রস্থ Auto-fit করুন‖Alt›H›O›I','Header Bold ও Filter‖Ctrl+B / Ctrl+Shift+L','Tuition Fee ছোট থেকে বড় Sort করুন‖Alt›A›S›S','Budget-এর বেশি Fee Highlight করুন‖Alt›H›L','পুরো ডেটা Table করুন‖Ctrl+T'],c:'প্রতিটি তথ্যের Source ও যাচাইয়ের তারিখ আছে।'},
+exceltrk:{t:'Excel: Application Tracking Sheet',g:'Application-এর অবস্থা ট্র্যাক করার Sheet।',s:['কলাম: Student ID, University, Course, Submission Date, Status, Next Action‖Tab','ডেটাকে Table বানান‖Ctrl+T','Submission Date দিন (আজকের তারিখ)‖Ctrl+;','Status-এর Dropdown বানান: Submitted, Documents Pending, Offer Received‖Alt›A›V›V','Status Filter করে Pending গুলো আলাদা করুন‖Ctrl+Shift+L','নতুন Row যোগ করুন‖Ctrl+Shift+Plus','Status-এ Colour দিন‖Alt›H›H','লিখুন =COUNTIF(E:E,"Submitted")‖F2','প্রতিদিনের শেষে Save করুন‖Ctrl+S'],c:'সব Application-এর Next Action লেখা আছে।'},
+excelrpt:{t:'Excel: Daily Report Sheet',g:'COUNTIF দিয়ে প্রতিদিনের Report বানানো।',s:['Report-এর Date দিন‖Ctrl+;','Activity লিখুন: New Leads, Contacted, Successful, Counselling, Doc Follow-ups, Submitted‖Tab','Tracking Sheet থেকে গণনা: =COUNTIF(Status কলাম,"Submitted"); Reference Lock‖F4','একাধিক শর্তে গণনা: =COUNTIFS(...)‖F2','Total যোগ করুন (AutoSum)‖Alt+=','Border ও Format ঠিক করুন‖Ctrl+1','সব ফর্মুলা একসঙ্গে দেখে যাচাই করুন‖Ctrl+`','Print বা PDF করে Team Leader-কে দিন‖Ctrl+P','তারিখসহ নতুন নামে Save As‖F12'],c:'প্রতিটি সংখ্যা অফিসের সংজ্ঞা অনুযায়ী (Dial ≠ Successful Conversation)।'},
+word:{t:'Word / Docs: CV ও SOP Review',g:'শিক্ষার্থীর তথ্য না বদলে লেখা উন্নত করা।',s:['একটি নমুনা SOP খুলুন','Suggesting / Track Changes মোড চালু করুন','Grammar, Clarity ও Structure সংশোধন করুন','অস্পষ্ট জায়গায় Comment দিন (তথ্য বানাবেন না)','মূল ও সংশোধিত Version আলাদা নামে Save করুন'],c:'শিক্ষার্থীর প্রকৃত অভিজ্ঞতা অপরিবর্তিত আছে।'},
+msg:{t:'WhatsApp/Messenger: Document সংগ্রহ',g:'শিক্ষার্থীর কাছ থেকে ভদ্রভাবে Document চাওয়া (অফিস নীতি অনুযায়ী)।',s:['লিখুন: “Hello [Name], please share a clear scanned copy of your passport and transcript.”','ফাইলের নাম ও ফরম্যাট (PDF) জানিয়ে দিন','পাওয়ার পর পড়া যাচ্ছে কি না দেখুন','CRM-এ Upload ও Status Update করুন','অননুমোদিত Chat-এ ফাইল রেখে দেবেন না, Upload শেষে মুছুন'],c:'ফাইল শুধু অনুমোদিত জায়গায় সংরক্ষিত।'}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const today=()=>new Date().toISOString().slice(0,10);
+const opt=(a,v)=>a.map(x=>'<option'+(x==v?' selected':'')+'>'+x+'</option>').join('');
+function mission(k,id){const m=S.m[k]=S.m[k]||[];if(!m.includes(id)){m.push(id);save();prog()}}
+const mbar=k=>'<div class="ms">'+P[k].m.map(([id,t])=>{const d=(S.m[k]||[]).includes(id);return '<span class="'+(d?'ok':'')+'">'+(d?'✓ ':'○ ')+t+'</span>'}).join('')+'</div>';
+const SIM={};
+function runSim(k,box){const sm=SIM[k];let st=S.sim[k]||(S.sim[k]=sm.init());
+const r=()=>{box.innerHTML=mbar(k)+(st.msg?'<div class="mg">'+st.msg+'</div>':'')+sm.view(st)+'<button class="b s rs" data-a="reset">↺ Reset</button>'};
+const h=e=>{const a=e.target.closest('[data-a]');if(!a)return;const cb=a.type=='checkbox';
+if(e.type=='click'&&(a.tagName=='SELECT'||a.tagName=='TEXTAREA'||cb))return;if(e.type=='change'&&a.tagName!='SELECT'&&a.tagName!='TEXTAREA'&&!cb)return;
+if(a.dataset.a=='reset'){st=S.sim[k]=sm.init();S.m[k]=[];save();prog();return r()}
+st.msg='';const v=a.dataset.v!==undefined?a.dataset.v:(cb?a.checked:a.value);
+sm.act(st,a.dataset.a,v,id=>box.querySelector('#'+id),m=>mission(k,m),a);save();r()};
+box.onclick=h;box.onchange=h;r()}
+const DOCS=['Passport','Transcript','IELTS','CV'],STG=['New','Contacted','Counselling Completed','Document Collection','Application'],DST=['Pending','Received','Verified','Re-upload'];
+const mkS=(id,n,c,i,s,d)=>({id,n,ph:'017XX-0000'+id.slice(-2),c,in:i,st:s,d:Object.fromEntries(DOCS.map((x,j)=>[x,d[j]])),f:Object.fromEntries(DOCS.filter((x,j)=>d[j]!='Pending').map(x=>[x,id+'_'+x+'.pdf'])),notes:[],fu:'',apps:[]});
+SIM.crm={init:()=>({s:[mkS('ST001','Tanvir Ahmed','MSc Management','Jan 2027','New',['Pending','Pending','Pending','Pending']),mkS('ST002','Nusrat Jahan','MSc Computing','Jan 2027','Contacted',['Received','Pending','Pending','Received']),mkS('ST003','Rafiq Hasan','MBA','Sep 2027','Document Collection',['Verified','Verified','Verified','Received'])],sel:'',q:'',fl:'All',tab:'docs',msg:''}),
+act(st,a,v,q,ms,el){const s=st.s.find(x=>x.id==st.sel);
+if(a=='search'){st.q=q('q').value.trim();if(st.q)ms('search')}
+else if(a=='fl'){st.fl=v;if(v=='Pending Docs')ms('filter')}
+else if(a=='open'){st.sel=v;st.tab='docs'}else if(a=='back')st.sel='';else if(a=='tab')st.tab=v;
+else if(a=='add'){const n=q('an').value.trim(),c=q('ac').value.trim();if(!n||!c){st.msg='⚠ Name ও Course দিন';return}const id='ST'+String(st.s.length+1).padStart(3,'0');st.s.push(mkS(id,n,c,q('ai').value,'New',['Pending','Pending','Pending','Pending']));st.msg='✅ নতুন Lead: '+id;ms('add')}
+else if(a=='stage')s.st=v;
+else if(a=='ds'){const d=el.dataset.d;if(!s.f[d]&&v!='Pending'){st.msg='⚠ ফাইল Upload ছাড়া Status বদলানো যাবে না';return}s.d[d]=v;if(v=='Verified')ms('ver')}
+else if(a=='up'){const d=el.dataset.d,n=q('fn'+d).value.trim(),ex=s.id+'_'+d+'.pdf';if(n!=ex){st.msg='⚠ ফাইলের নাম নিয়ম মানেনি। নিয়ম: StudentID_Document.pdf (এখানে '+ex+')';return}s.f[d]=n;s.d[d]='Received';st.msg='✅ Uploaded: '+n;ms('up')}
+else if(a=='note'){const x=q('nt').value.trim();if(x.length<15){st.msg='⚠ Note-এ কী হলো ও কী বাকি, অন্তত ১৫ অক্ষরে লিখুন';return}s.notes.unshift(today()+' — '+x);ms('note')}
+else if(a=='fu'){const d=q('fd').value;if(!d){st.msg='⚠ তারিখ বেছে নিন';return}s.fu=d;ms('fu')}
+else if(a=='app')s.apps.push({u:q('au').value,c:s.c,i:s.in,s:'Draft'});
+else if(a=='sub'){const x=DOCS.filter(d=>s.d[d]!='Verified');if(x.length){st.msg='⚠ Verified হয়নি: '+x.join(', ');return}if(!q('ap').checked){st.msg='⚠ Reviewer-এর অনুমোদন নেই';return}s.apps[+v].s='Submitted';s.st='Application';st.msg='✅ Application Submitted';ms('sub')}},
+view(st){const s=st.s.find(x=>x.id==st.sel),pend=x=>DOCS.filter(d=>x.d[d]=='Pending').length;
+if(!s){const L=st.s.filter(x=>(x.id+x.n+x.c).toLowerCase().includes(st.q.toLowerCase())&&(st.fl=='All'||(st.fl=='Pending Docs'?pend(x)>0:x.st==st.fl)));
+return '<div class="kp">'+[[st.s.length,'Leads'],[st.s.filter(x=>pend(x)).length,'Pending Docs'],[st.s.filter(x=>x.fu).length,'Follow-ups'],[st.s.reduce((a,x)=>a+x.apps.length,0),'Apps']].map(([n,l])=>'<div><b>'+n+'</b>'+l+'</div>').join('')+'</div><input id="q" placeholder="Name / ID / Course" value="'+esc(st.q)+'"> <button class="b" data-a="search">Search</button> <select data-a="fl">'+opt(['All',...STG,'Pending Docs'],st.fl)+'</select><details class="bx"><summary>＋ নতুন Lead</summary><input id="an" placeholder="Name"> <input id="ac" placeholder="Course"> <select id="ai">'+opt(['Jan 2027','May 2027','Sep 2027'])+'</select> <button class="b" data-a="add">Add</button></details>'+(L.map(x=>'<div class="rw" data-a="open" data-v="'+x.id+'"><b>'+x.id+'</b> '+esc(x.n)+'<br><small>'+esc(x.c)+' · '+x.in+'</small> <span class="chip">'+x.st+'</span> <small>Pending: '+pend(x)+'</small></div>').join('')||'<p class="sm">কোনো Lead নেই</p>')}
+const T=st.tab,tabs=['docs','apps','notes'];let b='';
+if(T=='docs')b='<p class="sm">নিয়ম: StudentID_Document.pdf</p>'+DOCS.map(d=>'<div class="bx"><b>'+d+'</b> <select data-a="ds" data-d="'+d+'">'+opt(DST,s.d[d])+'</select><br>'+(s.f[d]?'<small>📎 '+esc(s.f[d])+'</small><br>':'')+'<input id="fn'+d+'" placeholder="ফাইলের নাম"> <button class="b" data-a="up" data-d="'+d+'">Upload</button></div>').join('');
+if(T=='notes')b='<textarea id="nt" rows="3" placeholder="Note লিখুন" style="width:100%"></textarea><button class="b" data-a="note">Save Note</button><div class="bx">Follow-up: <input id="fd" type="date" min="'+today()+'" value="'+s.fu+'"> <button class="b" data-a="fu">Set</button></div>'+s.notes.map(n=>'<div class="rw">'+esc(n)+'</div>').join('');
+if(T=='apps')b='<select id="au">'+opt(['University A','University B','University C'])+'</select> <button class="b" data-a="app">＋ Draft</button>'+(s.apps.some(x=>x.s=='Draft')?'<label class="sm"><br><input type="checkbox" id="ap"> Reviewer/Team Leader অনুমোদন দিয়েছেন</label>':'')+s.apps.map((x,i)=>'<div class="bx">'+x.u+' · '+esc(x.c)+' · '+x.i+' <span class="chip">'+x.s+'</span>'+(x.s=='Draft'?' <button class="b" data-a="sub" data-v="'+i+'">Submit</button>':'')+'</div>').join('');
+return '<button class="b s" data-a="back">← Leads</button><h3>'+s.id+' · '+esc(s.n)+'</h3><p class="sm">📞 '+s.ph+' · '+esc(s.c)+' · '+s.in+(s.fu?' · Follow-up: <b>'+s.fu+'</b>':'')+'</p><label class="sm">Stage: <select data-a="stage">'+opt(STG,s.st)+'</select></label><div class="tb">'+tabs.map(t=>'<button class="b'+(T==t?'':' s')+'" data-a="tab" data-v="'+t+'">'+t+'</button>').join('')+'</div>'+b}};
+SIM.pdf={init:()=>({F:[['ST001_Passport.pdf',2,1.8],['ST001_Certificate.pdf',1,2.4],['ST001_Transcript.pdf',4,3.1],['ST001_CV.pdf',2,0.6],['ST001_SOP.pdf',3,0.9]].map(([n,p,s])=>({n,p,s})),sel:[],msg:''}),
+act(st,a,v,q,ms){const F=st.F;
+if(a=='t')st.sel=st.sel.includes(+v)?st.sel.filter(x=>x!=+v):[...st.sel,+v];
+else if(a=='merge'){const n=q('mn').value.trim();if(st.sel.length<2){st.msg='⚠ কমপক্ষে ২টি ফাইল বেছে নিন (ক্রম = বাছাইয়ের ক্রম)';return}if(!/^ST\d{3}_.+\.pdf$/.test(n)){st.msg='⚠ নাম হতে হবে ST001_Something.pdf';return}const fs=st.sel.map(i=>F[i]);F.push({n,p:fs.reduce((a,f)=>a+f.p,0),s:+fs.reduce((a,f)=>a+f.s,0).toFixed(1),g:1});st.sel=[];st.msg='✅ Merge হয়েছে: '+n;ms('merge')}
+else if(a=='comp'){const f=F[+q('cf').value],lv=q('cl').value,k={Low:.8,Medium:.5,High:.25}[lv];F.push({n:f.n.replace('.pdf','_'+lv+'.pdf'),p:f.p,s:+(f.s*k).toFixed(2),g:1});st.msg=(lv=='High'?'⚠ High Compression-এ লেখা ঝাপসা হতে পারে; খুলে পড়ে যাচাই করুন। ':'✅ ')+f.s+' MB → '+(f.s*k).toFixed(2)+' MB';ms('comp')}
+else if(a=='ext'){const f=F[+q('ef').value],[x,y]=q('er').value.split('-').map(Number),z=y||x;if(!(x>=1&&z<=f.p&&x<=z)){st.msg='⚠ Page Range ঠিক নয় (এই ফাইলে '+f.p+' পৃষ্ঠা)। উদাহরণ: 2-3';return}F.push({n:f.n.replace('.pdf','_p'+x+(z>x?'-'+z:'')+'.pdf'),p:z-x+1,s:+(f.s*(z-x+1)/f.p).toFixed(2),g:1});st.msg='✅ Extract হয়েছে';ms('ext')}
+else if(a=='chk'){F[+v].ok=1;ms('chk')}},
+view(st){const fo=st.F.map((f,i)=>'<option value="'+i+'">'+esc(f.n)+'</option>').join('');
+return '<h3>Files (ট্যাপ করে বাছুন)</h3>'+st.F.map((f,i)=>{const o=st.sel.indexOf(i);return '<div class="rw" data-a="t" data-v="'+i+'">'+(o>=0?'<span class="chip">'+(o+1)+'</span> ':'☐ ')+esc(f.n)+' <small>'+f.p+' পৃষ্ঠা · '+f.s+' MB'+(f.ok?' · ✓ যাচাই':'')+'</small>'+(f.g&&!f.ok?' <button class="b s" data-a="chk" data-v="'+i+'">পড়া ও Page Order যাচাই করেছি</button>':'')+'</div>'}).join('')+'<div class="bx"><b>Merge</b><br><input id="mn" value="ST001_Documents_Merged.pdf"> <button class="b" data-a="merge">Merge</button></div><div class="bx"><b>Compress</b><br><select id="cf">'+fo+'</select> <select id="cl">'+opt(['Low','Medium','High'],'Medium')+'</select> <button class="b" data-a="comp">Compress</button></div><div class="bx"><b>Extract Pages</b><br><select id="ef">'+fo+'</select> <input id="er" placeholder="2-3" size="5"> <button class="b" data-a="ext">Extract</button></div>'}};
+SIM.email={init:()=>({to:'',sub:'',body:'',att:'(none)',res:null,msg:''}),
+act(st,a,v,q,ms){if(a=='clear'){Object.assign(st,{to:'',sub:'',body:'',att:'(none)',res:null});return}
+if(a=='sample'){Object.assign(st,{to:'admissions@university-a.example',sub:'Application Query – ST001 – MSc Management Jan 2027',body:'Dear Admissions Team,\n\nI am writing to check the current status of the application for ST001, submitted on 28 October 2026 for MSc Management (January 2027 intake). Could you please confirm whether any additional documents are required?\n\nKind regards,\n[Your Name]\nStudent Counsellor, AHZ Associates',att:'(none)',res:null});return}
+Object.assign(st,{to:q('em_to').value.trim(),sub:q('em_s').value.trim(),body:q('em_b').value,att:q('em_a').value});const {to,sub,body,att}=st,wc=body.trim().split(/\s+/).filter(Boolean).length;
+st.res=[['To ঠিকানা সঠিক',/^\S+@\S+\.\S+$/.test(to)],['Subject-এ Student ID ও Course আছে',/ST\d{3}/.test(sub)&&/(Management|Computing|MBA|MSc)/i.test(sub)],['Body “Dear” দিয়ে শুরু',/^\s*Dear\s/i.test(body)],['Status/Document নিয়ে স্পষ্ট প্রশ্ন',/(status|additional document|documents? required)/i.test(body)],['তারিখ বা Intake উল্লেখ',/(2026|2027|Jan)/i.test(body)],['সৌজন্যমূলক সমাপ্তি (Kind regards)',/(kind|best) regards|sincerely/i.test(body)],['Signature-এ নাম ও AHZ Associates',/AHZ Associates/i.test(body)],['২৫–১২০ শব্দ ('+wc+')',wc>=25&&wc<=120],['Passport Number দেওয়া হয়নি',!/\b[A-Z]{1,2}\d{7,8}\b/.test(body)],['Attachment-এর নাম ST001_… ফরম্যাটে',att=='(none)'||/^ST\d{3}_/.test(att)]];
+if(st.res.every(r=>r[1])){ms('send');st.msg='✅ সব নিয়ম পাস। Email পাঠানোর উপযোগী (Simulation)'}if(/^ST\d{3}_/.test(att))ms('att')},
+view(st){return '<div class="gl">📌 ST001 (Tanvir Ahmed): MSc Management, January 2027-এর Application ২৮ অক্টোবর ২০২৬-এ Submit হয়েছে। Admissions Team-কে Status ও Additional Document জানতে Email লিখুন।</div><div class="bx"><input id="em_to" placeholder="To" value="'+esc(st.to)+'" style="width:100%"><input id="em_s" placeholder="Subject" value="'+esc(st.sub)+'" style="width:100%;margin-top:6px"><textarea id="em_b" rows="8" placeholder="Email লিখুন" style="width:100%;margin-top:6px">'+esc(st.body)+'</textarea><label class="sm">📎 Attachment: <select id="em_a">'+opt(['(none)','passport scan 1.pdf','ST001_Passport.pdf'],st.att)+'</select></label><br><button class="b" data-a="send">Check &amp; Send</button> <button class="b s" data-a="sample">Sample দেখুন</button> <button class="b s" data-a="clear">Clear</button></div>'+(st.res?'<div class="bx">'+st.res.map(([t,o])=>'<div>'+(o?'✅':'❌')+' '+t+'</div>').join('')+'</div>':'')}};
+SIM.cloud={init:()=>({I:[],cwd:'/',sh:[],pub:1,msg:''}),
+act(st,a,v,q,ms){const par=p=>p.slice(0,p.lastIndexOf('/'))||'/',has=p=>st.I.some(x=>x.p==p);
+if(a=='open')st.cwd=v;else if(a=='up')st.cwd=par(st.cwd);
+else if(a=='nf'||a=='nfl'){const n=q(a).value.trim(),p=(st.cwd=='/'?'':st.cwd)+'/'+n;if(!n||/[\/\\]/.test(n)){st.msg='⚠ সঠিক নাম দিন';return}if(has(p)){st.msg='⚠ আগে থেকেই আছে';return}st.I.push({p,t:a=='nf'?'d':'f'})}
+else if(a=='sh'){const w=q('sw').value;st.sh=st.sh.filter(x=>x.w!=w).concat([{w,p:q('sp').value}])}
+else if(a=='us')st.sh.splice(+v,1);else if(a=='pub')st.pub=!st.pub;
+const R=has('/ST001');if(R)ms('root');if(R&&['Documents','Application','Offer'].every(x=>has('/ST001/'+x)))ms('sub');if(has('/ST001/Documents/ST001_Passport.pdf'))ms('file');if(R&&st.sh.some(x=>x.w=='Team Leader'&&x.p=='View')&&!st.sh.some(x=>x.w=='Personal Friend'))ms('share');if(R&&!st.pub)ms('pub')},
+view(st){const par=p=>p.slice(0,p.lastIndexOf('/'))||'/',L=st.I.filter(x=>par(x.p)==st.cwd).sort((a,b)=>(a.t>b.t)-(a.t<b.t));
+return '<p class="sm">📍 '+esc(st.cwd)+'</p>'+(st.cwd!='/'?'<button class="b s" data-a="up">⬆ Up</button>':'')+L.map(x=>'<div class="rw"'+(x.t=='d'?' data-a="open" data-v="'+esc(x.p)+'"':'')+'>'+(x.t=='d'?'📁 ':'📄 ')+esc(x.p.split('/').pop())+'</div>').join('')+(L.length?'':'<p class="sm">ফাঁকা Folder</p>')+'<div class="bx"><input id="nf" placeholder="নতুন Folder (যেমন ST001)"> <button class="b" data-a="nf">＋ Folder</button><br><input id="nfl" placeholder="ফাইলের নাম" style="margin-top:6px"> <button class="b" data-a="nfl">＋ File</button></div><div class="bx"><b>🔗 Share: /ST001</b><br><select id="sw"><option value="Team Leader">Team Leader (অনুমোদিত)</option><option value="Personal Friend">Personal Friend (অননুমোদিত)</option></select> <select id="sp">'+opt(['View','Edit'])+'</select> <button class="b" data-a="sh">Share</button>'+st.sh.map((x,i)=>'<div class="sm">'+x.w+' — '+x.p+' <button class="b s" data-a="us" data-v="'+i+'">✕</button></div>').join('')+'<div style="margin-top:8px">Anyone with link: <b>'+(st.pub?'ON ⚠':'OFF ✅')+'</b> <button class="b s" data-a="pub">'+(st.pub?'বন্ধ করুন':'চালু করুন')+'</button></div></div>'}};
+SIM.portal={init:()=>({li:0,stat:'—',docs:[],txt:'',ap:0,msg:''}),
+act(st,a,v,q,ms){if(a=='login'){if(q('pu').value.trim()=='demo'&&q('pp').value=='demo123'){st.li=1;ms('login')}else st.msg='⚠ Login ব্যর্থ। Demo: demo / demo123';return}
+if(a=='draft'||a=='submit'){st.docs=['Passport','Transcript','CV','IELTS'].filter((d,i)=>q('pd'+i).checked);st.txt=q('pt').value.trim();st.ap=q('pa').checked;
+if(a=='draft'){st.stat='Draft';st.msg='✅ Draft Save হয়েছে';ms('draft');return}
+const e=[];['Passport','Transcript','CV'].forEach(d=>{if(!st.docs.includes(d))e.push(d+' সংযুক্ত করুন')});if(st.txt.length<40)e.push('Supporting Statement কমপক্ষে ৪০ অক্ষর');if(!st.ap)e.push('Reviewer অনুমোদন নেই');
+if(e.length){st.msg='⚠ Submit করা যাবে না: '+e.join('; ');return}st.stat='Submitted';st.msg='✅ Application Submitted';ms('sub');return}
+if(a=='chk'){const n={'Submitted':'Under Review','Under Review':'Additional Documents Requested','Under Review (Updated)':'Conditional Offer'}[st.stat];if(n){st.stat=n;if(n=='Conditional Offer'){ms('offer');st.msg='ℹ️ Offer-এর সময় ও শর্ত University অনুযায়ী ভিন্ন; এটি Simulation।'}}}
+if(a=='upl'){const n=q('pf').value.trim();if(!/^ST\d{3}_IELTS\.pdf$/.test(n)){st.msg='⚠ ফাইলের নাম হতে হবে StudentID_IELTS.pdf';return}st.stat='Under Review (Updated)';ms('resp')}},
+view(st){if(!st.li)return '<div class="bx"><b>University Portal Login</b><br><input id="pu" placeholder="Username"> <input id="pp" type="password" placeholder="Password"> <button class="b" data-a="login">Login</button></div>';
+const hd='<p class="sm">Applicant: Rahim Ahmed (ST010) · MSc Management · Jan 2027</p>';
+if(st.stat=='—'||st.stat=='Draft')return hd+'<div class="bx"><b>Documents (Passport, Transcript, CV বাধ্যতামূলক)</b><br>'+['Passport','Transcript','CV','IELTS'].map((d,i)=>'<label><input type="checkbox" id="pd'+i+'"'+(st.docs.includes(d)?' checked':'')+'> '+d+'</label> ').join('')+'<textarea id="pt" rows="4" placeholder="Supporting Statement" style="width:100%;margin-top:6px">'+esc(st.txt)+'</textarea><label class="sm"><input type="checkbox" id="pa"'+(st.ap?' checked':'')+'> Team Leader Review সম্পন্ন</label><br><button class="b s" data-a="draft">Save Draft</button> <button class="b" data-a="submit">Submit</button></div>';
+return hd+'<div class="bx">Status: <span class="chip">'+st.stat+'</span></div>'+(st.stat=='Additional Documents Requested'?'<div class="bx">IELTS Certificate চাওয়া হয়েছে।<br><input id="pf" placeholder="ফাইলের নাম"> <button class="b" data-a="upl">Upload</button></div>':st.stat=='Conditional Offer'?'<div class="tip">🎉 Conditional Offer পাওয়া গেছে</div>':'<button class="b" data-a="chk">Check Status</button>')}};
+
+const MA=[['Counsellor','Hello, am I speaking with Tanvir Ahmed?',''],['Student','Yes, speaking.',''],['Counsellor','Hello Tanvir, I am [Your Name] from AHZ Associates, calling about your interest in studying in the UK. Is this a convenient time to talk?','① পরিচয় · ② সময় জিজ্ঞাসা'],['Student','Yes, sure.',''],['Counsellor','Thank you. I see you completed your BBA and are interested in MSc Management for January 2027. Could you tell me about your plan for studying in the UK, and have you taken IELTS?','③ UK পরিকল্পনা জানতে চাওয়া'],['Student','I want a career in management, but I haven’t taken IELTS yet.',''],['Counsellor','That’s okay. Universities set their own English requirements, so the next step is to check the requirements of your preferred courses and decide whether IELTS or another accepted test suits you. If IELTS is needed, booking a date early will help your January 2027 timeline.','④ IELTS ও পরবর্তী ধাপ'],['Counsellor','Thank you, Tanvir. I will review your profile and check the relevant university requirements, and then we can discuss suitable options and next steps.','⑤ Admission নিশ্চিত না করে পেশাদার সমাপ্তি']];
+const AR=t=>[['① নিজের পরিচয় (নাম + AHZ Associates)',/(my name is|this is|i am|i’m|calling from)/i.test(t)&&/AHZ/i.test(t)],['② কথা বলার উপযুক্ত সময় জিজ্ঞাসা',/(convenient|good time|bad time|speak now|have a moment|few minutes)/i.test(t)],['③ UK-তে পড়ার পরিকল্পনা জানতে চাওয়া',/(UK|United Kingdom)/.test(t)&&/\?/.test(t)&&/(plan|interested|intake|course|study)/i.test(t)],['④ IELTS না দেওয়ার পর পরবর্তী ধাপ ব্যাখ্যা',/IELTS/i.test(t)&&/(next step|book|prepare|register|requirement|score|alternative|take the)/i.test(t)],['⑤ Admission নিশ্চিত না করে সমাপ্তি (Thank you + review/check)',/(thank you|thanks)/i.test(t)&&/(review|check|verify|requirement|next steps)/i.test(t)&&!/(guarantee|100%|definitely|surely|will get (the )?admission|confirm(ed)? (your )?admission)/i.test(t)]];
+SIM.assign={init:()=>({txt:'',res:null,n:0,model:0,msg:''}),
+act(st,a,v,q,ms){if(a=='model'){st.model=!st.model;if(st.model)ms('model');return}if(a=='clear'){st.txt='';st.res=null;return}
+st.txt=q('at').value;const L=st.txt.split('\n').filter(x=>x.trim()).length;st.n=L;st.res=AR(st.txt);
+if(/(guarantee|100%|definitely|surely|will get (the )?admission)/i.test(st.txt))st.msg='⚠ Admission-এর নিশ্চয়তা দেওয়া যাবে না; যাচাইয়ের কথা বলুন।';
+if(st.res.every(r=>r[1]))ms('w');if(L>=6&&L<=8)ms('len')},
+view(st){return '<div class="bx"><b>Lead:</b> Tanvir Ahmed · BBA Completed · CGPA 3.15 · IELTS: দেননি · MSc Management · January 2027 · Chattogram</div><div class="bx"><b>কাজ:</b><ol><li>নিজের পরিচয় দিন</li><li>কথা বলার উপযুক্ত সময় জিজ্ঞাসা করুন</li><li>UK-তে পড়ার পরিকল্পনা জানতে চান</li><li>IELTS না দেওয়ার পর পরবর্তী ধাপ ব্যাখ্যা করুন</li><li>Admission নিশ্চিত না করে পেশাদারভাবে শেষ করুন</li></ol></div><textarea id="at" data-a="sv" rows="9" placeholder="Counsellor: Hello, am I speaking with Tanvir Ahmed?&#10;Student: Yes, speaking.&#10;..." style="width:100%">'+esc(st.txt)+'</textarea><button class="b" data-a="sv">✔ Check করুন</button> <button class="b s" data-a="model">'+(st.model?'Model Answer লুকান':'👁 Model Answer দেখুন')+'</button> <button class="b s" data-a="clear">Clear</button>'+(st.res?'<div class="bx"><small>লাইন: '+st.n+' (লক্ষ্য ৬–৮)</small>'+st.res.map(([t,o])=>'<div>'+(o?'✅':'❌')+' '+t+'</div>').join('')+'</div>':'')+(st.model?'<h3>Model Answer</h3>'+MA.map(([r,t,g])=>'<div class="rw"><b>'+r+':</b> '+t+(g?'<br><small style="color:var(--ok)">'+g+'</small>':'')+'</div>').join('')+'<div class="warn"><b>যা বলবেন না:</b> “You will definitely get admission.” · “IELTS ছাড়াই হয়ে যাবে।” · “আপনার Result দিয়ে হবে না।” — যাচাই ছাড়া নিশ্চয়তা বা হতাশা, কোনোটাই নয়।</div><div class="tip">নিজের Version-এ নিজের ভাষা ব্যবহার করুন; Model হুবহু মুখস্থ নয়, কাঠামো বুঝে নিন।</div>':'')}};
+const QZ=[['ফোন না ধরলে Lead-এর Status কী হওয়া উচিত?',['Contacted','Counselling Completed','অফিসের Status Definition অনুযায়ী, Contacted নয়','Application'],2,'ফোন না ধরলে Contacted বা Counselling Completed দেখানো ঠিক নয়।'],['“CGPA 3.10, MSc Management-এ হবে?” — সঠিক উত্তর?',['অবশ্যই হবে','Official Requirement যাচাই করে জানাব','হবে না','যেকোনো University-তে হবে'],1,'আগে Course ও University-র Official Requirement যাচাই করতে হবে।'],['চূড়ান্ত Admission Decision কে নেয়?',['Counsellor','Team Leader','University','শিক্ষার্থী'],2,'সিদ্ধান্ত নেয় University; Counsellor সঠিক বিকল্প খুঁজতে সাহায্য করে।'],['কোন ফাইলের নাম সঠিক নিয়মে?',['passport scan.pdf','ST001_Passport.pdf','Rahim passport 1234567.pdf','final(2).pdf'],1,'StudentID_Document.pdf; নামে Passport Number দেবেন না।'],['“Offer কবে আসবে?” — করণীয়?',['৭ দিনে আসবে বলা','Portal ও Status যাচাই করে সঠিক Update দেওয়া','চুপ থাকা','University বদলাতে বলা'],1,'যাচাই ছাড়া নির্দিষ্ট সময়ের প্রতিশ্রুতি নয়।'],['SOP Review-তে কী করা যাবে?',['নতুন অভিজ্ঞতা যোগ','Grammar ও Structure উন্নত করা','পুরো নতুন SOP বানিয়ে দেওয়া','তথ্য বদলে ভালো দেখানো'],1,'শিক্ষার্থীর প্রকৃত অভিজ্ঞতা অক্ষুণ্ণ রাখতে হবে।'],['Excel-এ Filter চালুর Shortcut?',['Ctrl+B','Ctrl+Shift+L','Ctrl+D','Alt+='],1,'Ctrl+Shift+L = Filter On/Off।'],['Daily Report-এ Dial করা Lead আর Successful Conversation কি এক?',['হ্যাঁ','না, আলাদা','নির্ভর করে না','Report-এ লাগে না'],1,'প্রতিটি সংখ্যার অর্থ অফিসের সংজ্ঞা অনুযায়ী; দুটো আলাদা।']];
+SIM.quiz={init:()=>({o:[...QZ.keys()].sort(()=>Math.random()-.5),i:0,sc:0,a:null,done:0,msg:''}),
+act(st,a,v,q,ms){if(a=='ans'){if(st.a!==null)return;st.a=+v;if(+v==QZ[st.o[st.i]][2])st.sc++}
+else if(a=='next'){st.i++;st.a=null;if(st.i>=QZ.length){st.done=1;if(st.sc>=6)ms('pass')}}
+else if(a=='retry')Object.assign(st,{o:[...QZ.keys()].sort(()=>Math.random()-.5),i:0,sc:0,a:null,done:0})},
+view(st){if(st.done)return '<div class="bx" style="text-align:center"><h3 style="border:0">স্কোর: '+st.sc+' / '+QZ.length+'</h3><p>'+(st.sc>=6?'🎉 চমৎকার!':'আবার চেষ্টা করুন; গাইডলাইন একবার দেখে নিন।')+'</p><button class="b" data-a="retry">আবার খেলুন</button></div>';
+const x=QZ[st.o[st.i]];return '<p class="sm">প্রশ্ন '+(st.i+1)+' / '+QZ.length+' · সঠিক: '+st.sc+'</p><div class="bx"><b>'+x[0]+'</b></div>'+x[1].map((t,i)=>'<button class="b qo'+(st.a===null?'':i==x[2]?' ok':i==st.a?' no':'')+'" data-a="ans" data-v="'+i+'">'+t+'</button>').join('')+(st.a!==null?'<div class="'+(st.a==x[2]?'tip':'warn')+'">'+(st.a==x[2]?'✅ ঠিক! ':'❌ ভুল। ')+x[3]+'</div><button class="b" data-a="next">'+(st.i+1>=QZ.length?'ফলাফল':'পরের প্রশ্ন →')+'</button>':'')}};
+const PD=[['Day 1 · Calling ও Profile Assessment',['Calling Script ৫ বার জোরে পড়া','Mock Counselling (নিজে নিজে বা কারও সঙ্গে)','একটি কাল্পনিক Student Profile বানানো']],['Day 2 · Email ও English',['৩টি Professional Email লেখা','Email Practice সিস্টেমে সব নিয়ম পাস করা','ইংরেজিতে ১ মিনিট নিজের পরিচয় বলা']],['Day 3 · Excel, CRM ও Follow-up',['Student Tracking Sheet বানানো','CRM Practice-এর সব Mission','Follow-up List তৈরি']],['Day 4 · Research ও Documentation',['University Comparison Sheet (৩টি Course)','Document Checklist ও File Naming','PDF Tool Practice']],['Day 5 · Application থেকে Reporting',['Portal Simulator সম্পূর্ণ করা','Daily Report Sheet বানানো','Assignment ও Quiz শেষ করা']]];
+SIM.plan={init:()=>({c:{},msg:''}),
+act(st,a,v,q,ms){st.c[v]=!st.c[v];const d=+v.split(':')[0];if(PD[d][1].every((x,i)=>st.c[d+':'+i]))ms('d'+(d+1))},
+view(st){return PD.map(([t,L],d)=>{const n=L.filter((x,i)=>st.c[d+':'+i]).length;return '<div class="bx"><b>'+t+'</b> <span class="chip">'+n+'/'+L.length+'</span><div class="st">'+L.map((x,i)=>'<label><input type="checkbox" data-a="tg" data-v="'+d+':'+i+'"'+(st.c[d+':'+i]?' checked':'')+'><span>'+x+'</span></label>').join('')+'</div></div>'}).join('')+'<p class="sm">প্রতিদিন ৩–৪ ঘণ্টা অনুশীলন করুন।</p>'}};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],K='ahz-site';
+let S={t:[],p:{}};try{S=JSON.parse(localStorage.getItem(K))||S}catch(e){}
+S.m=S.m||{};S.sim=S.sim||{};
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+const full=k=>P[k].m?(S.m[k]||[]).length>=P[k].m.length:(S.p[k]||[]).length===P[k].s.length;
+function prog(){const tot=$$('.task').length+Object.keys(P).length,d=S.t.length+Object.keys(P).filter(full).length;
+$('#pf').style.width=Math.round(d/tot*100)+'%';$('#pt').textContent='অগ্রগতি: '+d+' / '+tot+' অনুশীলন সম্পন্ন'}
+$$('.task').forEach((el,i)=>{const b=document.createElement('button'),f=()=>{el.classList.toggle('d',S.t.includes(i));b.textContent=S.t.includes(i)?'✓ সম্পন্ন':'সম্পন্ন চিহ্নিত করুন'};
+b.onclick=()=>{S.t=S.t.includes(i)?S.t.filter(x=>x!=i):[...S.t,i];save();f();prog()};el.append(b);f()});
+$$('h2').forEach(h=>h.onclick=()=>h.parentElement.classList.toggle('c'));
+const kk=c=>c.split(' / ').map(x=>x.split(/([+›])/).map(y=>/^[+›]$/.test(y)?y:'<kbd>'+y+'</kbd>').join('')).join(' / ');
+function open(k){const p=P[k],a=S.p[k]||[];$('#mt').textContent=p.t;let h='<div class="gl">🎯 '+p.g+'</div>';
+if(p.sim)h+='<div id="sim"></div>';else h+='<div class="st">'+p.s.map((x,i)=>{const [t,c]=x.split('‖');return '<label><input type="checkbox" data-i="'+i+'"'+(a.includes(i)?' checked':'')+'><span>'+t+'</span>'+(c?'<em class="kk">'+kk(c)+'</em>':'')+'</label>'}).join('')+'</div>'+(p.x||'')+'<div class="tip ck">✅ যাচাই: '+p.c+'</div>';
+$('#mb').innerHTML=h;$('.sh').classList.toggle('big',!!p.sim);
+if(p.sim)runSim(k,$('#sim'));else $$('#mb input').forEach(c=>c.onchange=()=>{const i=+c.dataset.i,l=S.p[k]||[];S.p[k]=c.checked?[...l,i]:l.filter(x=>x!=i);save();prog()});
+$('#md').hidden=false;document.body.style.overflow='hidden'}
+const close=()=>{$('#md').hidden=true;document.body.style.overflow=''};
+$$('.info,.op').forEach(b=>b.onclick=e=>{e.preventDefault();e.stopPropagation();open(b.dataset.p)});
+$('#mx').onclick=close;$('#md').onclick=e=>{if(e.target.id=='md')close()};document.onkeydown=e=>{if(e.key=='Escape')close()};
+const TK='ahz-theme';try{const t=localStorage.getItem(TK);if(t)document.documentElement.dataset.theme=t}catch(e){}
+$('#th').onclick=()=>{const r=document.documentElement,c=r.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'),n=c=='dark'?'light':'dark';r.dataset.theme=n;try{localStorage.setItem(TK,n)}catch(e){}};
+const links=$$('#nav a[href^="#s"]'),secs=$$('section');
+addEventListener('scroll',()=>{const h=document.documentElement;$('#bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';$('#up').classList.toggle('on',h.scrollTop>600)},{passive:true});
+$('#up').onclick=()=>scrollTo({top:0});
+if('IntersectionObserver'in window){
+const r=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');r.unobserve(e.target)}}),{threshold:.05});
+secs.forEach(s=>{s.classList.add('rv');r.observe(s)})}
+prog();
+
+$('#sq').oninput=e=>{const q=e.target.value.trim().toLowerCase();let n=0;secs.forEach(s=>{const m=!q||s.textContent.toLowerCase().includes(q);s.style.display=m?'':'none';if(m){n++;if(q)s.classList.remove('c')}});$('#sr').textContent=q?n+'টি সেকশনে পাওয়া গেছে':''};
+
+(()=>{const NK='ahz-name',inp=$('#cn'),nodes=$$('.sc');let nm='';try{nm=localStorage.getItem(NK)||''}catch(e){}
+nodes.forEach(n=>n.dataset.o=n.innerHTML);
+const ap=()=>nodes.forEach(n=>{n.innerHTML=n.dataset.o.replace(/\[Your Name\]/g,nm||'[Your Name]').replace(/\[Name\], Student Counsellor/g,(nm||'[Name]')+', Student Counsellor')});
+inp.value=nm;ap();
+inp.oninput=()=>{nm=inp.value.trim();try{localStorage.setItem(NK,nm)}catch(e){}ap()};
+$('#ex').onclick=()=>{const cs=$$('section.card'),any=cs.some(c=>!c.classList.contains('c'));cs.forEach(c=>c.classList.toggle('c',any))};
+addEventListener('keydown',e=>{if(e.key=='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){e.preventDefault();$('#sq').focus()}});
+})();
+(()=>{const XS=[
+['মৌলিক কাজ',['Ctrl+C / Ctrl+X / Ctrl+V‖Copy / Cut / Paste','Ctrl+Z / Ctrl+Y‖Undo / Redo‖ভুল হলে সঙ্গে সঙ্গে Undo করুন','Ctrl+S‖Save‖কাজের মাঝে বারবার চাপুন','F12‖Save As (নতুন নামে / ফরম্যাটে)‖তারিখসহ নাম দিন','Ctrl+N / Ctrl+O‖নতুন Workbook / ফাইল খোলা','Ctrl+P‖Print বা PDF','Ctrl+F / Ctrl+H‖Find / Replace','Ctrl+A‖সব নির্বাচন (ডেটার ভেতরে দুবার চাপলে পুরো Sheet)','Ctrl+Alt+V‖Paste Special (Values, Formats, Transpose)‖ফর্মুলার বদলে শুধু মান বসাতে Values','F4‖শেষ কাজ আবার করা; ফর্মুলায় $ লক','Ctrl+W‖Workbook বন্ধ']],
+['চলাফেরা (Navigation)',['Ctrl+↓ / Ctrl+→‖ডেটার শেষ প্রান্তে লাফ (↑ ← ও একই)','Ctrl+Home / Ctrl+End‖A1 ঘরে / শেষ ডেটার ঘরে','Ctrl+PageDown / Ctrl+PageUp‖পরের / আগের Sheet','Ctrl+G / F5‖Go To: নির্দিষ্ট ঘরে যান (যেমন D500)','Tab / Shift+Tab‖ডানের / বাঁয়ের ঘর','Enter / Shift+Enter‖নিচের / উপরের ঘর','Ctrl+Tab‖খোলা Workbook-এর মধ্যে বদল','Ctrl+Backspace‖বর্তমান ঘর আবার দেখা']],
+['নির্বাচন (Selection)',['Shift+Arrow‖একটি একটি করে ঘর নির্বাচন','Ctrl+Shift+↓ / Ctrl+Shift+→‖ডেটার শেষ পর্যন্ত নির্বাচন','Ctrl+Space / Shift+Space‖পুরো Column / Row','Ctrl+Shift+End‖শেষ ডেটা পর্যন্ত নির্বাচন','Ctrl+Shift+*‖বর্তমান ডেটা Region নির্বাচন','F8‖Extend মোড (তীর দিয়ে নির্বাচন)','Ctrl+Click‖আলাদা আলাদা ঘর নির্বাচন']],
+['লেখা ও Edit',['F2‖ঘরের ভেতরে Edit','Ctrl+D / Ctrl+R‖উপরের / বাঁয়ের মান নিচে / ডানে কপি','Ctrl+Enter‖নির্বাচিত সব ঘরে একসঙ্গে লেখা বসানো‖লিখে Enter-এর বদলে Ctrl+Enter','Alt+Enter‖ঘরের ভেতরে নতুন লাইন','Ctrl+; / Ctrl+Shift+;‖আজকের তারিখ / এখনকার সময়','Ctrl+E‖Flash Fill: প্যাটার্ন দেখে নিজে পূরণ‖নাম আলাদা করতে দারুণ','Alt+=‖AutoSum','Ctrl+`‖ফর্মুলা / মান দেখার Toggle','Ctrl+K‖Hyperlink','Shift+F2‖ঘরে Note / Comment','Delete / Ctrl+-‖লেখা মোছা / Row-Column মোছা','Ctrl+Shift+Plus‖নতুন Row / Column / ঘর যোগ','Ctrl+Shift+Enter‖Array Formula (পুরোনো Excel)']],
+['Format',['Ctrl+B / Ctrl+I / Ctrl+U‖Bold / Italic / Underline','Ctrl+1‖Format Cells','Ctrl+Shift+1 / Ctrl+Shift+3‖Number / Date Format','Ctrl+Shift+4 / Ctrl+Shift+5‖Currency / Percent','Ctrl+Shift+~‖General Format','Alt›H›W‖Wrap Text','Alt›H›O›I / Alt›H›O›A‖Column Width / Row Height Auto-fit','Alt›H›H‖Fill Colour','Ctrl+Shift+& / Ctrl+Shift+_‖Border দেওয়া / সরানো','Alt›H›M›C‖Merge & Center‖Data Sheet-এ Merge এড়িয়ে চলুন','Ctrl+9 / Ctrl+0‖Row / Column লুকানো','Ctrl+Shift+9 / Ctrl+Shift+0‖Row / Column আবার দেখানো','Alt›H›F›P‖Format Painter']],
+['Data ও Table',['Ctrl+T‖ডেটাকে Table বানানো','Ctrl+Shift+L‖Filter চালু / বন্ধ','Alt+↓‖Filter Dropdown খোলা','Alt›A›S›S‖Sort Dialog','Alt›A›M‖Remove Duplicates','Alt›A›E‖Text to Columns','Alt›A›V›V‖Data Validation (Dropdown)','Alt›W›F›R‖উপরের Row Freeze','Alt›W›F›F‖Freeze Panes','Alt›H›L‖Conditional Formatting','Alt›N›V‖PivotTable','Alt+F1‖দ্রুত Chart']],
+['Sheet ও Workbook',['Shift+F11‖নতুন Sheet','Alt›H›O›R‖Sheet-এর নাম বদল','Alt›H›D›S‖Sheet মোছা','F11‖Chart Sheet','Ctrl+F1‖Ribbon দেখানো / লুকানো','Alt‖Ribbon-এর Key Tips (এরপর অক্ষর চাপুন)']]];
+const XF=[
+['হিসাব (Math)',['=SUM(range)‖যোগফল‖=SUM(B2:B10)','=AVERAGE(range)‖গড়‖=AVERAGE(B2:B10)','=MIN(range) / =MAX(range)‖সবচেয়ে ছোট / বড়‖=MAX(C2:C20)','=COUNT(range)‖সংখ্যা আছে এমন ঘর গণনা‖=COUNT(A2:A50)','=COUNTA(range)‖ফাঁকা নয় এমন ঘর গণনা (মোট Student)‖=COUNTA(B2:B50)','=COUNTBLANK(range)‖ফাঁকা ঘর গণনা‖=COUNTBLANK(F2:F50)','=ROUND(num, digits)‖দশমিক ঠিক করা (ROUNDUP / ROUNDDOWN ও আছে)‖=ROUND(B2*1.2,0)','=ABS(num)‖ঋণাত্মককে ধনাত্মক করা‖=ABS(-45)','=MOD(num, divisor)‖ভাগশেষ (জোড়/বিজোড় যাচাই)‖=MOD(A2,2)','=SUMPRODUCT(r1, r2)‖দুই কলামের গুণ করে যোগ‖=SUMPRODUCT(B2:B10,C2:C10)','=SUBTOTAL(109, range)‖Filter করা ঘরগুলোর যোগফল‖=SUBTOTAL(109,D2:D100)','=RANK(num, range)‖Ranking বের করা‖=RANK(B2,$B$2:$B$20)','=LARGE(range, k) / =SMALL(range, k)‖k-তম বড় / ছোট‖=LARGE(B2:B20,2)','=MEDIAN(range)‖মধ্যমা‖=MEDIAN(B2:B20)']],
+['শর্ত (Logic)',['=IF(test, yes, no)‖শর্ত মিললে এক ফল, না মিললে অন্য‖=IF(F2<TODAY(),"Overdue","OK")','=IFS(t1, v1, t2, v2…)‖একাধিক শর্ত পরপর‖=IFS(B2>=80,"A",B2>=60,"B",TRUE,"C")','=AND(a, b) / =OR(a, b)‖সব / যেকোনো শর্ত সত্য‖=IF(AND(C2="Yes",D2="Yes"),"Ready","Pending")','=NOT(test)‖শর্ত উল্টে দেয়‖=NOT(A2="")','=IFERROR(formula, alt)‖Error এলে বিকল্প মান‖=IFERROR(VLOOKUP(A2,H:J,2,0),"Not found")','=IFNA(formula, alt)‖শুধু #N/A হলে বিকল্প‖=IFNA(XLOOKUP(A2,H:H,I:I),"-")','=SWITCH(x, v1, r1, v2, r2, else)‖মান অনুযায়ী ফল‖=SWITCH(E2,"New",1,"Contacted",2,0)']],
+['শর্তসহ গণনা',['=COUNTIF(range, cond)‖শর্ত মিললে গণনা‖=COUNTIF(E2:E100,"Submitted")','=COUNTIFS(r1, c1, r2, c2)‖একাধিক শর্তে গণনা‖=COUNTIFS(E:E,"Submitted",C:C,"MSc*")','=SUMIF(range, cond, sum_range)‖শর্তে যোগ‖=SUMIF(C:C,"MBA",D:D)','=SUMIFS(sum, r1, c1, r2, c2)‖একাধিক শর্তে যোগ‖=SUMIFS(D:D,C:C,"MBA",E:E,"Offer")','=AVERAGEIF(range, cond, avg_range)‖শর্তে গড়‖=AVERAGEIF(C:C,"MBA",D:D)','=MAXIFS(max, range, cond)‖শর্তে সর্বোচ্চ‖=MAXIFS(D:D,C:C,"MBA")','=MINIFS(min, range, cond)‖শর্তে সর্বনিম্ন‖=MINIFS(D:D,C:C,"MBA")','Wildcard: * ও ?‖* যেকোনো লেখা, ? একটি অক্ষর‖=COUNTIF(B:B,"*Ahmed*")']],
+['খোঁজা (Lookup)',['=VLOOKUP(value, table, col, 0)‖বাঁ থেকে ডানে খুঁজে মান আনা (0 = হুবহু মিল)‖=VLOOKUP(A2,H:J,3,0)','=HLOOKUP(value, table, row, 0)‖Row ধরে খোঁজা‖=HLOOKUP(A1,A1:F5,3,0)','=XLOOKUP(value, look, return)‖আধুনিক ও সহজ Lookup (365 / 2021)‖=XLOOKUP(A2,H:H,J:J,"Not found")','=INDEX(range, row, col)‖নির্দিষ্ট অবস্থানের মান‖=INDEX(B2:D10,3,2)','=MATCH(value, range, 0)‖মান কত নম্বরে আছে‖=MATCH("ST005",A:A,0)','INDEX + MATCH‖VLOOKUP-এর শক্তিশালী বিকল্প (যেকোনো দিকে)‖=INDEX(C:C,MATCH(A2,A:A,0))','=FILTER(range, cond)‖শর্তে মেলা সব Row আলাদা করা (365)‖=FILTER(A2:F50,E2:E50="Pending")','=UNIQUE(range)‖ডুপ্লিকেট ছাড়া তালিকা (365)‖=UNIQUE(C2:C50)','=SORT(range, col, order)‖Sort করা তালিকা (365)‖=SORT(A2:F50,6,1)','=CHOOSE(n, v1, v2…)‖নম্বর অনুযায়ী বাছাই‖=CHOOSE(2,"A","B","C")','=TRANSPOSE(range)‖Row-কে Column বানানো‖=TRANSPOSE(A1:E1)']],
+['লেখা (Text)',['=LEFT(text, n) / =RIGHT(text, n)‖শুরু / শেষ থেকে n অক্ষর‖=LEFT(A2,5)','=MID(text, start, n)‖মাঝখান থেকে অক্ষর‖=MID(A2,3,4)','=LEN(text)‖অক্ষর সংখ্যা‖=LEN(A2)','=TRIM(text)‖বাড়তি Space মোছা‖=TRIM(B2)','=UPPER / =LOWER / =PROPER‖বড় / ছোট / প্রতি শব্দের প্রথম অক্ষর বড় হাতের‖=PROPER(TRIM(B2))','=A2&" "&B2‖লেখা জোড়া লাগানো‖=A2&" - "&C2','=CONCAT(a, b…)‖লেখা জোড়া‖=CONCAT(A2," ",B2)','=TEXTJOIN(sep, skip, range)‖বিভাজকসহ জোড়া‖=TEXTJOIN(", ",TRUE,A2:D2)','=SUBSTITUTE(text, old, new)‖লেখার অংশ বদল‖=SUBSTITUTE(A2,"-","")','=REPLACE(text, start, n, new)‖অবস্থান ধরে বদল‖=REPLACE(A2,1,3,"ST0")','=FIND(find, text) / =SEARCH(…)‖কোথায় আছে (FIND বড়-ছোট হাতের অক্ষর মানে)‖=SEARCH("@",A2)','=TEXT(value, format)‖সংখ্যা / তারিখের Format‖=TEXT(A2,"dd-mm-yyyy")','=VALUE(text)‖লেখাকে সংখ্যা বানানো‖=VALUE("125")','=CLEAN(text)‖অদৃশ্য অক্ষর মোছা‖=CLEAN(A2)','=EXACT(a, b)‖হুবহু মিল যাচাই‖=EXACT(A2,B2)','=TEXTSPLIT(text, delim)‖লেখা ভাগ করা (365)‖=TEXTSPLIT(A2," ")']],
+['তারিখ ও সময়',['=TODAY()‖আজকের তারিখ (প্রতিদিন নিজে বদলায়)‖=TODAY()','=NOW()‖এখনকার তারিখ ও সময়‖=NOW()','=DATE(y, m, d)‖তারিখ বানানো‖=DATE(2027,1,15)','=YEAR / =MONTH / =DAY‖তারিখ থেকে বছর / মাস / দিন‖=MONTH(D2)','=DATEDIF(start, end, "d")‖দুই তারিখের ব্যবধান (d দিন, m মাস, y বছর)‖=DATEDIF(TODAY(),G2,"d")','=DAYS(end, start)‖দিনের ব্যবধান‖=DAYS(G2,TODAY())','=EDATE(date, months)‖n মাস পরের তারিখ‖=EDATE(D2,3)','=EOMONTH(date, 0)‖মাসের শেষ দিন‖=EOMONTH(TODAY(),0)','=WORKDAY(date, n)‖n কর্মদিবস পরের তারিখ‖=WORKDAY(TODAY(),5)','=NETWORKDAYS(start, end)‖দুই তারিখের মধ্যে কর্মদিবস‖=NETWORKDAYS(D2,E2)','=WEEKDAY(date)‖সপ্তাহের কততম দিন‖=WEEKDAY(TODAY(),2)']],
+['অফিসের রেডি ফর্মুলা',['Student ID বানানো‖ST001, ST002… স্বয়ংক্রিয়‖="ST"&TEXT(ROW()-1,"000")','Follow-up Overdue দেখা‖আজকের তারিখ পার হলে লেখা আসবে‖=IF(AND(F2<>"",F2<TODAY()),"Overdue","OK")','ডুপ্লিকেট Lead ধরা‖একই Phone দুবার থাকলে লেখা আসবে‖=IF(COUNTIF(C:C,C2)>1,"Duplicate","")','Intake-এ আর কত দিন‖Intake তারিখ পর্যন্ত বাকি দিন‖=DATEDIF(TODAY(),G2,"d")','নামের ফরম্যাট ঠিক করা‖বাড়তি Space মুছে সুন্দর নাম‖=PROPER(TRIM(B2))','Daily Report: আজ কয়টি Submit‖আজকের তারিখ ও Status মিলিয়ে গণনা‖=COUNTIFS(E:E,"Submitted",D:D,TODAY())','Pending Document গণনা‖কতজনের Document বাকি‖=COUNTIF(H2:H100,"Pending")','মোট Conversion হার %‖Application ÷ মোট Lead‖=COUNTIF(E:E,"Application")/COUNTA(A2:A500)','Tuition Fee টাকায় (GBP → BDT)‖H1 ঘরে রেট রেখে $ দিয়ে লক করুন‖=C2*$H$1','Document সম্পূর্ণ কি না‖চারটি Document-ই Verified হলে Ready‖=IF(COUNTIF(F2:I2,"Verified")=4,"Ready","Incomplete")','Email ঠিকানা থেকে Domain‖@ এর পরের অংশ‖=MID(A2,FIND("@",A2)+1,50)','Phone নম্বরের শেষ ৪ সংখ্যা‖যাচাইয়ে কাজে লাগে‖=RIGHT(C2,4)']],
+['Cell Reference ও Error',['A1‖Relative: কপি করলে ঘর বদলায়‖=B2*C2','$A$1‖Absolute: কপিতেও ঘর অপরিবর্তিত (F4 চাপুন)‖=C2*$H$1','$A1 / A$1‖Mixed: শুধু Column বা শুধু Row লক','Sheet2!A1‖অন্য Sheet-এর ঘর‖=Sheet2!B5','#N/A‖মান খুঁজে পাওয়া যায়নি (Lookup-এ বানান / Space দেখুন)','#VALUE!‖ভুল ধরনের মান (লেখা দিয়ে হিসাব)','#REF!‖যে ঘর মুছে গেছে তার উল্লেখ','#DIV/0!‖শূন্য দিয়ে ভাগ‖=IFERROR(A2/B2,0)','#NAME?‖ফাংশনের নাম ভুল','##### ‖Column সরু; চওড়া করুন (Alt›H›O›I)']]];
+const box=document.getElementById('xg');let tab='s',q='';
+const D={s:XS,f:XF};
+const row=(r,isF)=>{const [k,d,e]=r.split('‖');const kh=isF?'<code>'+esc(k)+'</code>':'<span class="k">'+kk(k)+'</span>';
+const ex=e?(isF?'<div class="e">উদাহরণ: <code>'+esc(e)+'</code></div>':'<div class="e">💡 '+esc(e)+'</div>'):'';
+return '<div class="xr" data-c="'+esc(isF&&e?e:k)+'"><div class="k">'+kh+'</div><div class="d">'+esc(d)+'</div>'+ex+'</div>'};
+function draw(){const L=D[tab];let n=0;
+const h=L.map(([c,rs])=>{const f=rs.filter(r=>!q||r.toLowerCase().includes(q));n+=f.length;return f.length?'<h3>'+c+' <span class="chip">'+f.length+'</span></h3>'+f.map(r=>row(r,tab=='f')).join(''):''}).join('');
+box.querySelector('#xl').innerHTML=h||'<p class="sm">কিছু পাওয়া যায়নি। অন্য শব্দে খুঁজুন।</p>';
+box.querySelector('#xn').textContent=n+'টি';
+box.querySelectorAll('.xt').forEach(b=>b.classList.toggle('s',b.dataset.t!=tab))}
+box.innerHTML='<p class="sm">Windows Excel অনুযায়ী। Mac-এ Ctrl-এর বদলে Cmd, Alt-এর বদলে Option। <b>Alt›H›O›I</b> মানে Alt চেপে ছেড়ে এক এক করে H, O, I চাপা। ফর্মুলা Row-তে ট্যাপ করলে উদাহরণ কপি হবে।</p><div class="tb"><button class="b xt" data-t="s">⌨ Shortcut</button><button class="b xt s" data-t="f">ƒx Formula</button></div><label class="xq"><input id="xs" placeholder="খুঁজুন: যেমন SUM, Filter, তারিখ…" autocomplete="off"><span id="xn" class="chip"></span></label><div id="xl"></div>';
+box.onclick=e=>{const t=e.target.closest('.xt');if(t){tab=t.dataset.t;draw();return}
+const r=e.target.closest('.xr');if(r){try{navigator.clipboard.writeText(r.dataset.c)}catch(_){}r.classList.add('cp');setTimeout(()=>r.classList.remove('cp'),900)}};
+box.querySelector('#xs').oninput=e=>{q=e.target.value.trim().toLowerCase();draw()};
+draw()})();
+
+(()=>{const nav=$('#nav'),L=$$('#nav a[href^="#s"]'),S=$$('section');let lock=0,tk=0,cur=-1;
+const off=()=>{const r=nav.getBoundingClientRect();return(r.width>innerWidth*.9?r.bottom:0)+10};
+const center=a=>{const col=getComputedStyle(nav).flexDirection=='column';nav.scrollTo(col?{top:a.offsetTop-nav.clientHeight/2+a.offsetHeight/2,behavior:'smooth'}:{left:a.offsetLeft-nav.clientWidth/2+a.offsetWidth/2,behavior:'smooth'})};
+const act=i=>{if(i==cur)return;cur=i;L.forEach((l,k)=>l.classList.toggle('on',k==i));center(L[i])};
+const vis=i=>S[i].style.display!='none';
+const spy=()=>{if(Date.now()<lock)return;let c=-1;const o=off()+6;S.forEach((s,i)=>{if(vis(i)&&s.getBoundingClientRect().top<=o)c=i});
+if(c<0)c=S.findIndex((s,i)=>vis(i));
+if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)for(let i=S.length-1;i>=0;i--)if(vis(i)){c=i;break}
+if(c>=0)act(c)};
+L.forEach((a,i)=>a.onclick=e=>{e.preventDefault();const s=S[i];if(!vis(i)){const q=$('#sq');q.value='';q.oninput({target:q})}
+s.classList.remove('c');lock=Date.now()+200;cur=-1;act(i);
+scrollTo({top:Math.max(0,s.getBoundingClientRect().top+scrollY-off()),behavior:'smooth'})});
+addEventListener('scroll',()=>{if(Date.now()<lock){lock=Date.now()+200;return}if(!tk){tk=1;requestAnimationFrame(()=>{tk=0;spy()})}},{passive:true});
+addEventListener('resize',spy);
+document.addEventListener('click',e=>{if(e.target.closest('h2')||e.target.closest('#ex'))setTimeout(spy,60)});
+spy()})();
+</script></body></html>
