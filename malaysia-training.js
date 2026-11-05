@@ -54,6 +54,9 @@ function initRoleplay(){
  $('ms-bn').addEventListener('click',()=>{language='bn';render()});$('ms-en').addEventListener('click',()=>{language='en';render()});
  $('ms-prev').addEventListener('click',()=>{if(current>0){current--;render()}});
  $('ms-next').addEventListener('click',()=>{if(current<cases.length-1){current++;render()}});
+ window.msRoleplayPrevious=function(){if(current>0){current--;render()}};
+ window.msRoleplayNext=function(){if(current<cases.length-1){current++;render()}};
+
  disclosure.addEventListener('toggle',()=>{$('ms-reveal').textContent=disclosure.open?(language==='en'?'Hide Model Answer':'Model Answer লুকান'):(language==='en'?'Show Model Counsellor Answer':'Model Answer দেখুন')});
  let startX=0;const languageBar=root.querySelector('.ms-language');
  languageBar.addEventListener('touchstart',e=>{if(e.changedTouches&&e.changedTouches.length)startX=e.changedTouches[0].clientX},{passive:true});
