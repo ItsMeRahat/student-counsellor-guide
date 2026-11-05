@@ -234,3 +234,17 @@ body{background:radial-gradient(ellipse at 80% 0%,rgba(126,88,205,.17),transpare
  .academy-modules{grid-template-columns:1fr}
  .w>section.card{padding:7px 15px 12px}
 }
+
+/* Master Class dropdown: detached from horizontally scrolling nav to prevent clipping */
+#master-menu-panel{position:fixed;z-index:9999;display:grid;gap:5px;min-width:220px;padding:9px;background:var(--card);border:1px solid var(--bd);border-radius:14px;box-shadow:0 18px 48px rgba(0,0,0,.24)}
+#master-menu-panel[hidden]{display:none!important}
+#master-menu-panel a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:var(--tx);text-decoration:none;font-size:13px;font-weight:600}
+#master-menu-panel a:hover,#master-menu-panel a:focus{background:var(--pr2);color:var(--pr);outline:none}
+#master-nav>summary{cursor:pointer;user-select:none}
+#master-nav>summary:focus-visible{outline:3px solid var(--pr);outline-offset:3px}
+@media(max-width:1099px){
+ #master-menu-panel{top:62px;left:10px;right:10px;width:auto;min-width:0}
+}
+@media(min-width:1100px){
+ #master-menu-panel{left:276px;top:50%;transform:translateY(-50%);width:230px}
+}
