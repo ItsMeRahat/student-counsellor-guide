@@ -2,3 +2,5 @@
 .ms-language{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:0 0 14px;padding:9px;border:1px solid var(--bd);border-radius:12px;background:var(--bg)}.ms-language span:first-child{font-size:13px;font-weight:700;margin-right:auto}.ms-language button{border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:6px 13px;border-radius:9px;font:inherit;font-size:13px;cursor:pointer}.ms-language button.active{background:var(--pr);color:#fff;border-color:var(--pr)}.ms-language .ms-swipe-hint{flex-basis:100%;font-size:11px;color:var(--mu)}.ms-roleplay{touch-action:pan-y}@media(min-width:600px){.ms-language .ms-swipe-hint{flex-basis:auto;margin-left:6px}}
 
 .ms-answer-wrap{margin:10px 0}.ms-answer-wrap>.ms-reveal{list-style:none;text-align:center}.ms-answer-wrap>.ms-reveal::-webkit-details-marker{display:none}.ms-answer-wrap>.ms-reveal::marker{content:""}.ms-answer-wrap[open]>.ms-reveal{border-radius:10px 10px 0 0}.ms-answer-wrap>.ms-answer{margin:0;border-radius:0 0 12px 12px}.ms-answer-wrap:not([open])>.ms-answer{display:none}
+
+.ms-runtime-error{padding:10px;border:1px solid #c33;border-radius:8px;color:#f88;background:#321;font-size:13px}
