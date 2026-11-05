@@ -53,8 +53,18 @@ function initRoleplay(){
  }
  $('ms-bn').addEventListener('click',()=>{language='bn';render()});$('ms-en').addEventListener('click',()=>{language='en';render()});
  // Navigation is handled by the single inline button actions below.
- window.msRoleplayPrevious=function(){if(current>0){current--;render()}};
- window.msRoleplayNext=function(){if(current<cases.length-1){current++;render()}};
+ let lastNavigationAt=0;
+ function navigateOneStep(direction){
+  const now=Date.now();
+  if(now-lastNavigationAt<500)return;
+  lastNavigationAt=now;
+  const next=current+direction;
+  if(next<0||next>=cases.length)return;
+  current=next;
+  render();
+ }
+ window.msRoleplayPrevious=function(){navigateOneStep(-1)};
+ window.msRoleplayNext=function(){navigateOneStep(1)};
  window.msRoleplayToggleAnswer=function(){const d=document.getElementById('ms-answer-wrap');if(d)d.open=!d.open};
 
  disclosure.addEventListener('toggle',()=>{$('ms-reveal').textContent=disclosure.open?(language==='en'?'Hide Model Answer':'Model Answer লুকান'):(language==='en'?'Show Model Counsellor Answer':'Model Answer দেখুন')});
