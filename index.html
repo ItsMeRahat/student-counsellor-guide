@@ -142,7 +142,12 @@ footer{padding:20px 12px 72px;line-height:1.7}
 .xr .k kbd{font-size:12.5px}
 </style><link rel="stylesheet" href="academy.css"><link rel="stylesheet" href="malaysia-training.css"></head><body>
 <div id="bar"></div>
-<nav id="nav"><a href="#" class="op x" data-p="assign">📝 Assignment</a><a href="#" class="op x" data-p="quiz">🧠 Quiz</a><a href="#" class="op x" data-p="plan">🗓 Planner</a><a href="#s1">Workflow</a><a href="#s2">Calling</a><a href="#s3">Profile</a><a href="#s4">University</a><a href="#s5">Documents</a><a href="#s6">Application</a><a href="#s7">CRM</a><a href="#s8">Software</a><a href="#s9">CRM Docs</a><a href="#s10">Excel·PDF·Mail</a><a href="#s11">Schedule</a><a href="#s12">Excel Guide</a><a href="#s13">🇲🇾 Malaysia Roleplay</a><a href="#s14">🇸🇪 Sweden Masterclass</a><a href="#s15">🇳🇴 Norway Masterclass</a></nav>
+<nav id="nav" aria-label="Main navigation">
+<a href="#home" class="nav-home active" data-home>⌂ <span>Dashboard</span></a>
+<a href="#s1">Workflow</a><a href="#s2">Calling</a><a href="#s3">Profile</a><a href="#s4">University</a><a href="#s5">Documents</a><a href="#s6">Application</a><a href="#s7">CRM</a><a href="#s8">Software</a><a href="#s9">CRM Docs</a><a href="#s10">Excel · PDF · Mail</a><a href="#s11">Schedule</a><a href="#s12">Excel Guide</a>
+<details class="nav-dropdown" id="master-nav"><summary>🎓 Master Class <span class="nav-chevron">⌄</span></summary><div class="nav-submenu"><a href="#s13">🇲🇾 Malaysia</a><a href="#s14">🇸🇪 Sweden</a><a href="#s15">🇳🇴 Norway</a></div></details>
+<div class="nav-tools"><a href="#" class="op x" data-p="assign">📝 Assignment</a><a href="#" class="op x" data-p="quiz">🧠 Quiz</a><a href="#" class="op x" data-p="plan">🗓 Planner</a></div>
+</nav>
 <div class="w">
 <header class="hero">
 <div class="ht"><h1>Student Counsellor গাইডলাইন</h1><button id="th" aria-label="Theme" title="Dark / Light">🌓</button></div>
@@ -615,20 +620,4 @@ const r=e.target.closest('.xr');if(r){try{navigator.clipboard.writeText(r.datase
 box.querySelector('#xs').oninput=e=>{q=e.target.value.trim().toLowerCase();draw()};
 draw()})();
 
-(()=>{const nav=$('#nav'),L=$$('#nav a[href^="#s"]'),S=$$('section');let lock=0,tk=0,cur=-1;
-const off=()=>{const r=nav.getBoundingClientRect();return(r.width>innerWidth*.9?r.bottom:0)+10};
-const center=a=>{const col=getComputedStyle(nav).flexDirection=='column';nav.scrollTo(col?{top:a.offsetTop-nav.clientHeight/2+a.offsetHeight/2,behavior:'smooth'}:{left:a.offsetLeft-nav.clientWidth/2+a.offsetWidth/2,behavior:'smooth'})};
-const act=i=>{if(i==cur)return;cur=i;L.forEach((l,k)=>l.classList.toggle('on',k==i));center(L[i])};
-const vis=i=>S[i].style.display!='none';
-const spy=()=>{if(Date.now()<lock)return;let c=-1;const o=off()+6;S.forEach((s,i)=>{if(vis(i)&&s.getBoundingClientRect().top<=o)c=i});
-if(c<0)c=S.findIndex((s,i)=>vis(i));
-if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)for(let i=S.length-1;i>=0;i--)if(vis(i)){c=i;break}
-if(c>=0)act(c)};
-L.forEach((a,i)=>a.onclick=e=>{e.preventDefault();const s=S[i];if(!vis(i)){const q=$('#sq');q.value='';q.oninput({target:q})}
-s.classList.remove('c');lock=Date.now()+200;cur=-1;act(i);
-scrollTo({top:Math.max(0,s.getBoundingClientRect().top+scrollY-off()),behavior:'smooth'})});
-addEventListener('scroll',()=>{if(Date.now()<lock){lock=Date.now()+200;return}if(!tk){tk=1;requestAnimationFrame(()=>{tk=0;spy()})}},{passive:true});
-addEventListener('resize',spy);
-document.addEventListener('click',e=>{if(e.target.closest('h2')||e.target.closest('#ex'))setTimeout(spy,60)});
-spy()})();
-</script><script src="malaysia-training.js?v=20261105-stepguard"></script><script src="sweden-training.js?v=1"></script><script src="norway-training.js?v=1"></script><script src="academy.js"></script></body></html>
+</script><script src="malaysia-training.js?v=20261105-stepguard"></script><script src="sweden-training.js?v=1"></script><script src="norway-training.js?v=1"></script><script src="academy.js"></script><script src="app-navigation.js?v=20261105-dynamic"></script></body></html>
