@@ -376,7 +376,7 @@ footer{padding:20px 12px 72px;line-height:1.7}
 <div class="ms-scenario-head"><span id="ms-scenario-count">Scenario 1 of 10</span><h4 id="ms-scenario-title">First Enquiry</h4></div>
 <div class="ms-student-box"><b id="ms-student-label">🎭 STUDENT</b><p id="ms-question">আমি বাংলাদেশ থেকে Malaysia-তে Bachelor/Master’s করতে চাই। কিন্তু কোথা থেকে শুরু করব কিছুই জানি না।</p></div><div class="ms-instruction"><b id="ms-counsellor-label">🎓 COUNSELLOR</b><p id="ms-prompt">Student-এর লক্ষ্য, qualification, subject interest, budget, English level ও intake জানবে। এখনই University বা visa promise করবে না।</p></div>
 <details class="ms-answer-wrap" id="ms-answer-wrap"><summary class="ms-reveal" id="ms-reveal">Show Model Counsellor Answer</summary><div id="ms-answer" class="ms-answer"><h4>Model Counsellor Answer</h4><p>ধন্যবাদ আপনার আগ্রহের জন্য। প্রথমে আপনার academic background, preferred subject, target intake, English proficiency এবং overall budget বুঝে নেব। এরপর আপনার profile অনুযায়ী course ও institution shortlist করে entry requirements এবং accreditation যাচাই করব।</p><p><b>পরবর্তী Follow-up:</b> আপনার সর্বশেষ qualification কী? কোন subject পড়তে চান?</p></div></details>
-<div class="ms-actions"><button type="button" id="ms-prev">← Previous</button><button type="button" id="ms-next">Next Scenario →</button></div></div>
+<div class="ms-actions"><button type="button" id="ms-prev" onclick="window.msRoleplayPrevious && window.msRoleplayPrevious()">← Previous</button><button type="button" id="ms-next" onclick="window.msRoleplayNext && window.msRoleplayNext()">Next Scenario →</button></div></div>
 <h3>Part I — Counsellor Performance Scorecard</h3>
 <p>প্রতিটি roleplay শেষে ৫টি criteria-তে ০–২ নম্বর দিন: ০ = বাদ গেছে, ১ = আংশিক, ২ = সম্পূর্ণ ও পরিষ্কার।</p>
 <div class="ms-score" id="ms-score">
@@ -602,4 +602,4 @@ addEventListener('scroll',()=>{if(Date.now()<lock){lock=Date.now()+200;return}if
 addEventListener('resize',spy);
 document.addEventListener('click',e=>{if(e.target.closest('h2')||e.target.closest('#ex'))setTimeout(spy,60)});
 spy()})();
-</script><script src="malaysia-training.js?v=20261105-nav"></script><script src="academy.js"></script></body></html>
+</script><script src="malaysia-training.js?v=20261105-final1"></script><script src="academy.js"></script></body></html>
