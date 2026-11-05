@@ -56,11 +56,7 @@ modules.forEach(([id])=>{
   save();syncCards();render();
  });
 });
-$('#ac-continue').onclick=()=>{
- const next=modules.find(([id])=>!state.done.includes(id))||modules[0];
- const target=document.getElementById(next[0]);target.classList.remove('c');
- target.scrollIntoView({behavior:'smooth',block:'start'});
-};
+
 $('#ac-reset').onclick=()=>{
  if(!confirm('সব Module Completion Progress মুছে ফেলতে চান?'))return;
  state.done=[];save();syncCards();render();
