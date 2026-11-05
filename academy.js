@@ -28,7 +28,7 @@ const render=()=>{
  $('#ac-percent').textContent=pct+'%';$('#ac-bar').style.width=pct+'%';
  $('#ac-label').textContent=count+' of '+modules.length+' modules';
  let dayCount=0;
- try{const p=JSON.parse(localStorage.getItem('ahz-plan')||'{}');dayCount=['d1','d2','d3','d4','d5'].filter(k=>p[k]===true).length}catch(e){}
+ try{const p=JSON.parse(localStorage.getItem('ahz-site')||'{}');dayCount=(p.m&&p.m.plan||[]).length}catch(e){}
  $('#ac-days').textContent=dayCount+'/5';
  $('#ac-modules').innerHTML=modules.map(([id,label])=>'<label class="academy-module '+(state.done.includes(id)?'done':'')+'"><input type="checkbox" data-module="'+id+'" '+(state.done.includes(id)?'checked':'')+'><span>'+label+'</span>'+(state.done.includes(id)?'<b aria-label="Completed">✓</b>':'')+'</label>').join('');
 };
