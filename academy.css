@@ -26,3 +26,52 @@
 @media(max-width:520px){.academy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.academy-modules{grid-template-columns:1fr}.academy{padding:14px}}
 @media print{.academy-actions,.academy-complete{display:none!important}}
 .academy-title::after{display:none!important}.academy-badge{font-size:10px;color:var(--mu);border:1px solid var(--bd);border-radius:20px;padding:2px 9px;white-space:nowrap}.academy-btn{font:inherit;font-size:12.5px;font-weight:600}
+
+/* App-style workspace navigation */
+html{scroll-padding-top:16px}
+.w{max-width:1120px;padding:22px clamp(14px,3vw,34px) 36px}
+#nav{gap:5px}
+#nav>a{display:flex;align-items:center;gap:9px}
+#nav .nav-home{font-weight:700;color:var(--pr);background:var(--pr2);border-color:transparent;margin-bottom:7px}
+#nav .nav-home.active{background:var(--pr);color:#fff}
+.nav-dropdown{position:relative;color:var(--mu);font-size:13px}
+.nav-dropdown>summary{list-style:none;cursor:pointer;border:1px solid var(--bd);border-radius:10px;padding:7px 12px;font-weight:650;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.nav-dropdown>summary::-webkit-details-marker{display:none}
+.nav-dropdown[open]>summary{color:var(--pr);border-color:var(--pr);background:var(--pr2)}
+.nav-chevron{transition:transform .2s}.nav-dropdown[open] .nav-chevron{transform:rotate(180deg)}
+.nav-submenu{display:grid;gap:4px;padding:6px 0 6px 12px}
+.nav-submenu a{display:block;text-decoration:none;color:var(--mu);border:1px solid transparent;border-radius:9px;padding:6px 10px;font-size:12.5px}
+.nav-submenu a:hover,.nav-submenu a.on{background:var(--pr2);color:var(--pr)}
+.nav-tools{display:grid;gap:4px;margin-top:8px}
+.nav-tools a{display:block;text-decoration:none;border-radius:9px;padding:7px 11px;font-size:12.5px}
+.w>section.card[hidden],.w>section.academy[hidden]{display:none!important}
+.w>section.card:not([hidden]){animation:workspace-in .22s ease both}
+@keyframes workspace-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.w>section.card{margin-bottom:18px}
+.w>section.card .bd{max-width:100%}
+#sr{min-height:0}
+@media(min-width:1100px){
+ #nav{width:252px;padding:78px 13px 24px;gap:3px}
+ #nav::before{content:"COUNSELLOR ACADEMY";font-size:10px;letter-spacing:.16em;color:var(--mu);font-weight:800}
+ #nav>a{border:0;border-radius:10px;padding:7px 11px;font-size:13px}
+ #nav .nav-home{margin-bottom:10px}
+ #nav .nav-dropdown>summary{border:0;padding:8px 11px}
+ #nav .nav-submenu{padding-left:12px}
+ #nav .nav-tools{border-top:1px solid var(--bd);padding-top:10px;margin-top:12px}
+ body{padding-left:252px}
+ body::before,#bar{left:252px}
+ .w{max-width:1180px}
+}
+@media(max-width:1099px){
+ #nav{position:sticky;top:env(safe-area-inset-top,0px);width:100%;flex-direction:row;align-items:center;overflow-x:auto;padding:8px 10px}
+ #nav>a{white-space:nowrap}
+ #nav .nav-home{margin:0}
+ #nav .nav-dropdown{flex:none}
+ #nav .nav-dropdown>summary{white-space:nowrap;padding:5px 10px}
+ #nav .nav-submenu{position:absolute;top:calc(100% + 5px);left:0;min-width:180px;padding:8px;background:var(--card);border:1px solid var(--bd);border-radius:13px;box-shadow:var(--sh);z-index:50}
+ #nav .nav-tools{display:flex;flex:none;margin:0}
+ #nav .nav-tools a{white-space:nowrap}
+}
+@media(max-width:600px){.w{padding-top:14px}.hero{border-radius:18px}.card{border-radius:16px}}
+@media(prefers-reduced-motion:reduce){.w>section.card:not([hidden]){animation:none}}
+@media print{#nav{display:none!important}.w>section.card[hidden],.w>section.academy[hidden]{display:block!important}}
