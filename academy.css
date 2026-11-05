@@ -75,3 +75,93 @@ html{scroll-padding-top:16px}
 @media(max-width:600px){.w{padding-top:14px}.hero{border-radius:18px}.card{border-radius:16px}}
 @media(prefers-reduced-motion:reduce){.w>section.card:not([hidden]){animation:none}}
 @media print{#nav{display:none!important}.w>section.card[hidden],.w>section.academy[hidden]{display:block!important}}
+
+/* Premium learning portal visual system */
+:root{--pr:#176b87;--pr2:#eaf4f7;--ac:#e8ad45;--hero:linear-gradient(125deg,#102f49 0%,#145c78 58%,#117d82 100%);--sh:0 8px 28px rgba(10,35,60,.07),0 1px 3px rgba(10,35,60,.05)}
+:root[data-theme="dark"]{--pr:#7ac7df;--pr2:#1a3444;--hero:linear-gradient(125deg,#10243a,#123f59 58%,#10565b);--sh:0 12px 32px rgba(0,0,0,.2)}
+body{background:radial-gradient(ellipse at 85% 0%,rgba(23,107,135,.07),transparent 34%),var(--bg)}
+.w{max-width:1160px;padding:24px clamp(16px,3vw,38px) 100px}
+.hero{border-radius:26px;padding:clamp(22px,4vw,34px);margin-bottom:20px;box-shadow:0 14px 40px rgba(5,40,65,.16);border:1px solid rgba(255,255,255,.12)}
+.hero h1{letter-spacing:-.035em}
+.hero .co{opacity:.84}
+.hero .kw span{backdrop-filter:blur(8px)}
+.hero .hr{gap:9px}
+.hero .hb{min-height:40px;padding:7px 15px;border-radius:12px}
+.hero .tl{gap:10px}
+.hero .fld{border-radius:13px;min-height:44px}
+#sr{color:var(--mu);font-size:12px;padding:2px 3px}
+.academy{padding:clamp(16px,2.5vw,24px);border-radius:22px;margin-bottom:22px;box-shadow:var(--sh)}
+.academy-title{font-size:clamp(18px,2vw,22px);letter-spacing:-.02em}
+.academy-grid{gap:10px;margin:18px 0}
+.academy-stat{padding:15px 10px;border:1px solid color-mix(in srgb,var(--pr) 12%,var(--bd));border-radius:15px}
+.academy-stat b{font-size:clamp(22px,3vw,28px)}
+.academy-stat span{font-size:11px;letter-spacing:.01em}
+.academy-track{height:9px;background:color-mix(in srgb,var(--bd) 75%,transparent)}
+.academy-actions{margin:16px 0 4px}
+.academy-btn{min-height:39px;padding:8px 14px;border-radius:11px;transition:transform .16s,background .16s}
+.academy-btn:active,.hb:active{transform:scale(.97)}
+.academy-modules{gap:8px;margin-top:16px}
+.academy-module{padding:11px 12px;border-radius:12px;background:color-mix(in srgb,var(--card) 92%,var(--pr2));font-size:13px;transition:border-color .18s,background .18s}
+.academy-module input{width:18px;height:18px}
+.academy-note{line-height:1.7;margin-top:14px}
+.w>section.card{border-radius:20px;padding:8px 22px 14px;margin-bottom:20px;box-shadow:var(--sh);overflow:hidden}
+.w>section.card h2{font-size:clamp(18px,2vw,21px);padding:17px 0;gap:12px}
+.w>section.card .bd{padding-top:14px;padding-bottom:12px;line-height:1.85}
+.w>section.card h3{margin-top:22px}
+.w>section.card .academy-complete{background:var(--pr2);border-color:transparent;border-radius:12px;padding:10px 12px}
+.w>section.card .academy-complete span{font-size:13px}
+.w>section.card[hidden],.w>section.academy[hidden]{display:none!important}
+#nav{scrollbar-width:none;overscroll-behavior-x:contain}
+#nav::-webkit-scrollbar{display:none}
+#nav a,#nav .nav-dropdown>summary{transition:background .16s,border-color .16s,color .16s}
+#nav a:focus-visible,#nav summary:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid color-mix(in srgb,var(--pr) 45%,transparent);outline-offset:2px}
+#page-pager{display:none}
+footer{padding:24px 12px 10px}
+@media(min-width:1100px){
+ body{padding-left:264px}
+ body::before,#bar{left:264px}
+ #nav{width:264px;padding:82px 16px 28px;background:color-mix(in srgb,var(--card) 94%,var(--bg));box-shadow:4px 0 22px rgba(10,30,50,.035)}
+ #nav::before{content:"✦  COUNSELLOR ACADEMY";top:26px;left:19px;font-size:11px;letter-spacing:.1em;color:var(--pr)}
+ #nav>a{padding:9px 12px;border-radius:11px;font-size:13px}
+ #nav .nav-home{margin-bottom:12px}
+ #nav .nav-dropdown>summary{padding:10px 12px}
+ #nav .nav-tools{margin-top:18px;padding-top:14px}
+ .w{max-width:1240px;padding-top:32px}
+ .academy-modules{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:1099px){
+ body{padding-bottom:calc(78px + env(safe-area-inset-bottom,0px))}
+ #nav{position:sticky;top:0;z-index:45;display:flex;flex-wrap:nowrap;align-items:center;gap:7px;padding:9px 12px;background:color-mix(in srgb,var(--card) 93%,transparent);border-bottom:1px solid var(--bd);backdrop-filter:blur(16px);box-shadow:0 4px 18px rgba(10,30,50,.045)}
+ #nav>a{flex:none;white-space:nowrap;padding:7px 12px;border-radius:10px;font-size:12px}
+ #nav .nav-home{margin:0}
+ #nav .nav-dropdown{flex:none}
+ #nav .nav-dropdown>summary{padding:7px 11px;white-space:nowrap}
+ #nav .nav-submenu{position:fixed;top:58px;left:10px;min-width:205px;padding:9px;background:var(--card);border:1px solid var(--bd);border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.18);z-index:60}
+ #nav .nav-tools{display:none}
+ .w{padding:16px 14px 32px}
+ .hero{padding:22px 18px;border-radius:21px}
+ .academy{margin-bottom:16px}
+ .academy-modules{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #page-pager{position:fixed;display:flex;align-items:center;justify-content:space-between;gap:14px;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:38;padding:8px 10px;background:color-mix(in srgb,var(--card) 92%,transparent);border:1px solid var(--bd);border-radius:17px;box-shadow:0 8px 30px rgba(0,0,0,.15);backdrop-filter:blur(18px)}
+ #page-pager button{width:42px;height:40px;border:0;border-radius:12px;background:var(--pr);color:#fff;font-size:21px;font-weight:700}
+ #page-pager button:disabled{opacity:.28}
+ #page-pager span{display:grid;text-align:center;line-height:1.3;color:var(--tx);font-size:12px}
+ #page-pager small{font-size:10px;color:var(--mu);margin-top:3px}
+}
+@media(max-width:560px){
+ .hero h1{font-size:23px}
+ .hero .hr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .hero .hb{font-size:12px;padding:7px 5px}
+ .hero .tl{display:grid;grid-template-columns:1fr}
+ .academy-head{align-items:center}
+ .academy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .academy-modules{grid-template-columns:1fr}
+ .academy-module{font-size:12.5px}
+ .w>section.card{padding:7px 15px 12px;border-radius:17px}
+ .w>section.card h2{font-size:17px}
+ .w>section.card .bd{font-size:14px}
+ .w>section.card table{font-size:12px}
+ .w>section.card .academy-complete{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media print{#nav,#page-pager{display:none!important}body{padding:0!important}.w>section.card[hidden]{display:block!important}}
