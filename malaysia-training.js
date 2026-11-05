@@ -52,8 +52,7 @@ function initRoleplay(){
   $('ms-bn').setAttribute('aria-pressed',String(language==='bn'));$('ms-en').setAttribute('aria-pressed',String(language==='en'));
  }
  $('ms-bn').addEventListener('click',()=>{language='bn';render()});$('ms-en').addEventListener('click',()=>{language='en';render()});
- $('ms-prev').addEventListener('click',()=>{if(current>0){current--;render()}});
- $('ms-next').addEventListener('click',()=>{if(current<cases.length-1){current++;render()}});
+ // Navigation is handled by the single inline button actions below.
  window.msRoleplayPrevious=function(){if(current>0){current--;render()}};
  window.msRoleplayNext=function(){if(current<cases.length-1){current++;render()}};
  window.msRoleplayToggleAnswer=function(){const d=document.getElementById('ms-answer-wrap');if(d)d.open=!d.open};
