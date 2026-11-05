@@ -56,6 +56,7 @@ function initRoleplay(){
  $('ms-next').addEventListener('click',()=>{if(current<cases.length-1){current++;render()}});
  window.msRoleplayPrevious=function(){if(current>0){current--;render()}};
  window.msRoleplayNext=function(){if(current<cases.length-1){current++;render()}};
+ window.msRoleplayToggleAnswer=function(){const d=document.getElementById('ms-answer-wrap');if(d)d.open=!d.open};
 
  disclosure.addEventListener('toggle',()=>{$('ms-reveal').textContent=disclosure.open?(language==='en'?'Hide Model Answer':'Model Answer লুকান'):(language==='en'?'Show Model Counsellor Answer':'Model Answer দেখুন')});
  let startX=0;const languageBar=root.querySelector('.ms-language');
