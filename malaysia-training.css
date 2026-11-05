@@ -4,3 +4,5 @@
 .ms-answer-wrap{margin:10px 0}.ms-answer-wrap>.ms-reveal{list-style:none;text-align:center}.ms-answer-wrap>.ms-reveal::-webkit-details-marker{display:none}.ms-answer-wrap>.ms-reveal::marker{content:""}.ms-answer-wrap[open]>.ms-reveal{border-radius:10px 10px 0 0}.ms-answer-wrap>.ms-answer{margin:0;border-radius:0 0 12px 12px}.ms-answer-wrap:not([open])>.ms-answer{display:none}
 
 .ms-runtime-error{padding:10px;border:1px solid #c33;border-radius:8px;color:#f88;background:#321;font-size:13px}
+
+.ms-scenario-head{padding:10px 12px;margin:8px 0 12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg)}.ms-scenario-head span{display:block;font-size:11px;color:var(--mu);font-weight:700;text-transform:uppercase;letter-spacing:.04em}.ms-scenario-head h4{margin:4px 0 0;font-size:16px;color:var(--tx)}.ms-actions button:disabled{opacity:.38;cursor:not-allowed}
