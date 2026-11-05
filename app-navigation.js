@@ -1,78 +1,83 @@
-/* Professional Academy app shell and navigation */
+/* Counsellor Academy — stable app navigation */
 (()=>{
 'use strict';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>Array.from(r.querySelectorAll(s));
-const nav=$('#nav'),home=$('[data-home]'),dashboard=$('#academy-dashboard'),workspace=$('.w');
+const nav=$('#nav'),workspace=$('.w'),home=$('[data-home]'),dashboard=$('#academy-dashboard');
 if(!nav||!workspace)return;
-const cards=$$('.w>section.card'),order=['home',...cards.map(c=>c.id)];
+const cards=$$('.w > section.card'),ids=cards.map(x=>x.id),order=['home',...ids];
 let active='home',touch=null,searchMode=false;
-function clearSearch(){const q=$('#sq'),r=$('#sr');if(q)q.value='';if(r)r.textContent='';searchMode=false}
-function linkFor(id){return $$('a[href^="#"]',nav).find(a=>a.getAttribute('href')==='#'+id)}
-function updateNav(id){
+const master=$('#master-nav');
+function setMenu(open){if(master)master.open=!!open}
+function markNav(id){
  $$('a[href^="#"]',nav).forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id));
  home?.classList.toggle('active',id==='home');
- const link=linkFor(id);if(link&&window.matchMedia('(max-width:1099px)').matches)link.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
- const master=$('#master-nav');if(['s13','s14','s15'].includes(id))master?.setAttribute('open','');else master?.removeAttribute('open');
+ const isMaster=['s13','s14','s15'].includes(id);
+ if(isMaster)setMenu(true);
+ else setMenu(false);
+ const link=$$('a[href^="#"]',nav).find(a=>a.getAttribute('href')==='#'+id);
+ if(link&&innerWidth<1100)link.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
 }
 function updatePager(){
- const idx=order.indexOf(active),label=$('#page-count'),prev=$('#page-prev'),next=$('#page-next');
- if(label)label.textContent=active==='home'?'Dashboard':(idx)+' / 15';
- if(prev)prev.disabled=idx<=0;
- if(next)next.disabled=idx<0||idx>=order.length-1;
+ const i=order.indexOf(active),label=$('#page-count'),prev=$('#page-prev'),next=$('#page-next');
+ if(label)label.textContent=active==='home'?'Dashboard':(i)+' / '+ids.length;
+ if(prev)prev.disabled=i<=0;
+ if(next)next.disabled=i<0||i>=order.length-1;
 }
-function showHome(push=true){
- active='home';clearSearch();cards.forEach(c=>c.hidden=true);if(dashboard)dashboard.hidden=false;
- updateNav('home');updatePager();if(push&&location.hash!=='#home')history.pushState(null,'','#home');
- window.scrollTo({top:0,behavior:'smooth'});
-}
-function showSection(id,push=true){
- const target=document.getElementById(id);if(!target||!target.classList.contains('card'))return;
- active=id;clearSearch();cards.forEach(c=>c.hidden=c!==target);if(dashboard)dashboard.hidden=true;
- target.classList.remove('c');updateNav(id);updatePager();
+function setView(id,{push=true,scroll=true}={}){
+ const valid=id==='home'||ids.includes(id);if(!valid)return;
+ active=id;searchMode=false;
+ const q=$('#sq'),result=$('#sr');if(q)q.value='';if(result)result.textContent='';
+ cards.forEach(c=>{c.hidden=id==='home'||c.id!==id});
+ if(dashboard)dashboard.hidden=id!=='home';
+ markNav(id);updatePager();
  if(push&&location.hash!=='#'+id)history.pushState(null,'','#'+id);
- window.scrollTo({top:0,behavior:'smooth'});
+ if(scroll)window.scrollTo({top:0,behavior:'smooth'});
 }
-function go(delta){const i=order.indexOf(active),n=Math.max(0,Math.min(order.length-1,i+delta));if(n===i)return;order[n]==='home'?showHome():showSection(order[n])}
+function go(step){const i=order.indexOf(active),n=Math.max(0,Math.min(order.length-1,i+step));if(n!==i)setView(order[n])}
 nav.addEventListener('click',e=>{
- const a=e.target.closest('a');if(!a||a.matches('.op'))return;
- const href=a.getAttribute('href');if(a.hasAttribute('data-home')||href==='#home'){e.preventDefault();showHome();return}
- if(href&&href.startsWith('#s')){e.preventDefault();showSection(href.slice(1))}
+ const link=e.target.closest('a');if(!link)return;
+ if(link.classList.contains('op'))return;
+ const href=link.getAttribute('href');
+ if(link.hasAttribute('data-home')||href==='#home'){e.preventDefault();setView('home');return}
+ if(href&&ids.includes(href.slice(1))){e.preventDefault();setView(href.slice(1));setMenu(false)}
 });
-$$('.nav-submenu a').forEach(a=>a.addEventListener('click',()=>$('#master-nav')?.removeAttribute('open')));
-window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(!id||id==='home')showHome(false);else showSection(id,false)});
-window.addEventListener('popstate',()=>{const id=location.hash.slice(1);if(!id||id==='home')showHome(false);else showSection(id,false)});
+if(master){
+ const summary=master.querySelector('summary');
+ summary?.addEventListener('click',e=>{e.preventDefault();setMenu(!master.open)});
+ master.querySelectorAll('.nav-submenu a').forEach(a=>a.addEventListener('click',e=>{
+  e.preventDefault();const id=a.getAttribute('href').slice(1);if(ids.includes(id))setView(id);setMenu(false);
+ }));
+}
+window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);setView(ids.includes(id)?id:'home',{push:false,scroll:false})});
+window.addEventListener('popstate',()=>{const id=location.hash.slice(1);setView(ids.includes(id)?id:'home',{push:false,scroll:false})});
 const search=$('#sq');
-if(search)search.addEventListener('input',()=>{
+search?.addEventListener('input',()=>{
  const q=search.value.trim().toLocaleLowerCase('bn'),result=$('#sr');
- if(!q){if(result)result.textContent='';if(searchMode){const id=active;active='home';id==='home'?showHome(false):showSection(id,false)}return}
- const found=cards.filter(c=>(c.textContent||'').toLocaleLowerCase('bn').includes(q));
- searchMode=true;cards.forEach(c=>c.hidden=!found.includes(c));if(dashboard)dashboard.hidden=true;
- if(result)result.textContent=found.length?found.length+'টি Section-এ ফলাফল':'কোনো Section পাওয়া যায়নি';
- if(found.length){active=found[0].id;updateNav(active);updatePager()}
+ if(!q){if(result)result.textContent='';if(searchMode)setView(active,{push:false,scroll:false});return}
+ searchMode=true;const found=cards.filter(c=>(c.innerText||c.textContent||'').toLocaleLowerCase('bn').includes(q));
+ cards.forEach(c=>c.hidden=!found.includes(c));if(dashboard)dashboard.hidden=true;
+ if(result)result.textContent=found.length?found.length+'টি Section পাওয়া গেছে':'কোনো Section পাওয়া যায়নি';
+ if(found.length){active=found[0].id;markNav(active);updatePager()}
 });
-const continueBtn=$('#ac-continue');
-if(continueBtn)continueBtn.onclick=()=>{
+$('#ac-continue')?.addEventListener('click',()=>{
  let done=[];try{done=JSON.parse(localStorage.getItem('rahat-counsellor-academy-v1')||'{"done":[]}').done||[]}catch(e){}
- showSection(order.find(id=>id!=='home'&&!done.includes(id))||'s1');
-};
+ setView(ids.find(id=>!done.includes(id))||ids[0]);
+});
+const pagerPrev=$('#page-prev'),pagerNext=$('#page-next');
+pagerPrev?.addEventListener('click',()=>go(-1));pagerNext?.addEventListener('click',()=>go(1));
 workspace.addEventListener('touchstart',e=>{
  if(e.touches.length!==1)return;
- const t=e.target;
- if(t.closest('input,textarea,select,button,a,summary,details,.ms-language,.nav-submenu,.tw,.xq,.xr,[contenteditable="true"]')){touch=null;return}
+ if(e.target.closest('input,textarea,select,button,a,summary,details,.ms-language,.nav-submenu,.tw,.xq,.xr,[contenteditable="true"]')){touch=null;return}
  touch={x:e.touches[0].clientX,y:e.touches[0].clientY};
 },{passive:true});
 workspace.addEventListener('touchend',e=>{
  if(!touch||!e.changedTouches.length)return;
  const dx=e.changedTouches[0].clientX-touch.x,dy=e.changedTouches[0].clientY-touch.y;touch=null;
- if(Math.abs(dx)<75||Math.abs(dx)<Math.abs(dy)*1.3)return;
- go(dx<0?1:-1);
+ if(Math.abs(dx)>80&&Math.abs(dx)>Math.abs(dy)*1.35)go(dx<0?1:-1);
 },{passive:true});
-const prev=$('#page-prev'),next=$('#page-next');
-if(prev)prev.addEventListener('click',()=>go(-1));if(next)next.addEventListener('click',()=>go(1));
 document.addEventListener('keydown',e=>{
  if(e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName||''))return;
  if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1);
 });
-const initial=location.hash.slice(1);if(initial&&initial!=='home'&&document.getElementById(initial))showSection(initial,false);else showHome(false);
-updatePager();
+const initial=location.hash.slice(1);setView(ids.includes(initial)?initial:'home',{push:false,scroll:false});
 })();
