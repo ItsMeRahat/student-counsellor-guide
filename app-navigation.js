@@ -34,7 +34,29 @@ nav.addEventListener('click',e=>{
  if(a.hasAttribute('data-home')||href==='#home'){e.preventDefault();showHome();return}
  if(href&&href.startsWith('#s')){e.preventDefault();showSection(href.slice(1))}
 });
-window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(id==='home'||!id)showHome(false);else showSection(id,false)});
+window.addEventListener('hashchange',()=>{
+/* Touch swipe navigation: one page per gesture */
+const pageOrder=['home','s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15'];
+let touchStart=null;
+const workspace=$('.w');
+if(workspace){
+ workspace.addEventListener('touchstart',e=>{
+  if(e.touches.length!==1)return;
+  const t=e.target;
+  if(t.closest('input,textarea,select,button,a,summary,details,.ms-language,.nav-submenu,.tw,.xq,.xr,[contenteditable="true"]')){touchStart=null;return}
+  touchStart={x:e.touches[0].clientX,y:e.touches[0].clientY};
+ },{passive:true});
+ workspace.addEventListener('touchend',e=>{
+  if(!touchStart||!e.changedTouches.length)return;
+  const dx=e.changedTouches[0].clientX-touchStart.x,dy=e.changedTouches[0].clientY-touchStart.y;
+  touchStart=null;
+  if(Math.abs(dx)<75||Math.abs(dx)<Math.abs(dy)*1.35)return;
+  const index=pageOrder.indexOf(active);if(index<0)return;
+  const next=pageOrder[index+(dx<0?1:-1)];if(!next)return;
+  if(next==='home')showHome();else showSection(next);
+ },{passive:true});
+}
+const id=location.hash.slice(1);if(id==='home'||!id)showHome(false);else showSection(id,false)});
 window.addEventListener('popstate',()=>{const id=location.hash.slice(1);if(id==='home'||!id)showHome(false);else showSection(id,false)});
 const search=$('#sq');
 if(search)search.oninput=()=>{
