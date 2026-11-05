@@ -19,7 +19,7 @@ panel.innerHTML=
 '<div class="academy-head"><div><h2 class="academy-title">🎓 My Learning Dashboard</h2><p class="academy-sub">Personal progress • এই ব্রাউজারেই অগ্রগতি সংরক্ষিত হবে</p></div><span class="academy-badge">PERSONAL MODE</span></div>'+
 '<div class="academy-grid"><div class="academy-stat"><b id="ac-done">0</b><span>Completed Modules</span></div><div class="academy-stat"><b id="ac-left">15</b><span>Remaining Modules</span></div><div class="academy-stat"><b id="ac-percent">0%</b><span>Overall Progress</span></div><div class="academy-stat"><b id="ac-days">0/5</b><span>Study Plan</span></div></div>'+
 '<div class="academy-track"><i id="ac-bar"></i></div><div class="academy-progress-label"><span>Learning progress</span><strong id="ac-label">0 of 15 modules</strong></div>'+
-'<div class="academy-actions"><button class="academy-btn primary" id="ac-continue">▶ Continue Learning</button><button class="academy-btn" id="ac-expand">Open All Sections</button><button class="academy-btn" id="ac-reset">Reset Progress</button></div>'+
+'<div class="academy-actions"><button class="academy-btn primary" id="ac-continue">▶ Continue Learning</button><button class="academy-btn" id="ac-reset">Reset Progress</button></div>'+
 '<div class="academy-modules" id="ac-modules"></div><p class="academy-note">Local Storage ব্যবহৃত হচ্ছে। একই Browser ও Device-এ Progress থাকবে; Browser data মুছলে Progress হারাতে পারে। এটি Cloud Sync বা Backup নয়।</p>';
 hero.insertAdjacentElement('afterend',panel);
 const render=()=>{
@@ -61,7 +61,6 @@ $('#ac-continue').onclick=()=>{
  const target=document.getElementById(next[0]);target.classList.remove('c');
  target.scrollIntoView({behavior:'smooth',block:'start'});
 };
-$('#ac-expand').onclick=()=>document.querySelectorAll('section.card').forEach(s=>s.classList.remove('c'));
 $('#ac-reset').onclick=()=>{
  if(!confirm('সব Module Completion Progress মুছে ফেলতে চান?'))return;
  state.done=[];save();syncCards();render();
