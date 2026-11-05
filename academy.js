@@ -5,7 +5,7 @@ const KEY='rahat-counsellor-academy-v1';
 const modules=[
 ['s1','সম্পূর্ণ Workflow'],['s2','Student Calling'],['s3','Profile Assessment'],['s4','University Research'],
 ['s5','Documentation'],['s6','Application & Visa'],['s7','CRM & Reporting'],['s8','Software'],
-['s9','CRM Document Handling'],['s10','Excel, PDF & Email'],['s11','৫ দিনের Schedule'],['s12','Excel Guide'],['s13','Malaysia Counselling Roleplay'],['s14','Sweden Masterclass'],['s15','Norway Masterclass']
+['s9','CRM Document Handling'],['s10','Excel, PDF & Email'],['s11','৫ দিনের Schedule'],['s12','Excel Guide'],['s13','Malaysia Counselling Roleplay'],['s14','Sweden Masterclass'],['s15','Norway Masterclass'],['s14','Sweden Masterclass'],['s15','Norway Masterclass']
 ];
 const read=()=>{try{return JSON.parse(localStorage.getItem(KEY))||{done:[]}}catch(e){return{done:[]}}};
 let state=read();
@@ -17,8 +17,8 @@ panel.className='academy';panel.id='academy-dashboard';
 panel.setAttribute('aria-label','Personal learning dashboard');
 panel.innerHTML=
 '<div class="academy-head"><div><h2 class="academy-title">🎓 My Learning Dashboard</h2><p class="academy-sub">Personal progress • এই ব্রাউজারেই অগ্রগতি সংরক্ষিত হবে</p></div><span class="academy-badge">PERSONAL MODE</span></div>'+
-'<div class="academy-grid"><div class="academy-stat"><b id="ac-done">0</b><span>Completed Modules</span></div><div class="academy-stat"><b id="ac-left">12</b><span>Remaining Modules</span></div><div class="academy-stat"><b id="ac-percent">0%</b><span>Overall Progress</span></div><div class="academy-stat"><b id="ac-days">0/5</b><span>Study Plan</span></div></div>'+
-'<div class="academy-track"><i id="ac-bar"></i></div><div class="academy-progress-label"><span>Learning progress</span><strong id="ac-label">0 of 12 modules</strong></div>'+
+'<div class="academy-grid"><div class="academy-stat"><b id="ac-done">0</b><span>Completed Modules</span></div><div class="academy-stat"><b id="ac-left">15</b><span>Remaining Modules</span></div><div class="academy-stat"><b id="ac-percent">0%</b><span>Overall Progress</span></div><div class="academy-stat"><b id="ac-days">0/5</b><span>Study Plan</span></div></div>'+
+'<div class="academy-track"><i id="ac-bar"></i></div><div class="academy-progress-label"><span>Learning progress</span><strong id="ac-label">0 of 15 modules</strong></div>'+
 '<div class="academy-actions"><button class="academy-btn primary" id="ac-continue">▶ Continue Learning</button><button class="academy-btn" id="ac-expand">Open All Sections</button><button class="academy-btn" id="ac-reset">Reset Progress</button></div>'+
 '<div class="academy-modules" id="ac-modules"></div><p class="academy-note">Local Storage ব্যবহৃত হচ্ছে। একই Browser ও Device-এ Progress থাকবে; Browser data মুছলে Progress হারাতে পারে। এটি Cloud Sync বা Backup নয়।</p>';
 hero.insertAdjacentElement('afterend',panel);
