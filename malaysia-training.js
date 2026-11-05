@@ -25,24 +25,26 @@ const en=[
 ];
 
 let current=0,language="bn";const $=id=>document.getElementById(id);
-const bnLabels=['1. First Enquiry – “আমি Malaysia যেতে চাই, কিছুই জানি না”','2. Academic Profile – “আমার HSC result ও study gap আছে”','3. Course & University – “কোন University ভালো?”','4. English – “IELTS ছাড়া সম্ভব?”','5. Cost – “মোট কত টাকা লাগবে?”','6. Application – “কী কী document লাগবে?”','7. Visa – “Student Visa কীভাবে হবে?”','8. Part-time Work – “কাজ করে খরচ চালাতে পারব?”','9. Travel – “Malaysia পৌঁছে কী করব?”','10. Objection – “আপনি কি visa guarantee দিচ্ছেন?”'];
-const enLabels=['1. First Enquiry – “I want to study in Malaysia”','2. Academic Profile – “My HSC results and study gap”','3. Course & University – “Which university is right for me?”','4. English – “Can I apply without IELTS?”','5. Cost – “What is the total cost?”','6. Application – “Which documents do I need?”','7. Visa – “How do I get a Student Pass?”','8. Part-time Work – “Can I fund my studies by working?”','9. Travel – “What should I do after arrival?”','10. Objection – “Can you guarantee my visa?”'];
+const bnLabels=['First Enquiry','Academic Profile','Course & University','English Requirements','Cost & Budget','Application Documents','Student Pass & Visa','Part-time Work','Arrival in Malaysia','Visa Guarantee'];
+const enLabels=['First Enquiry','Academic Profile','Course & University','English Requirements','Cost & Budget','Application Documents','Student Pass & Visa','Part-time Work','Arrival in Malaysia','Visa Guarantee'];
 function initRoleplay(){
  const root=$('ms-roleplay');if(!root)return;
- const required=['ms-case','ms-question','ms-prompt','ms-answer','ms-answer-wrap','ms-reveal','ms-prev','ms-next','ms-bn','ms-en','ms-language-label','ms-student-label','ms-counsellor-label'];
+ const required=['ms-scenario-count','ms-scenario-title','ms-question','ms-prompt','ms-answer','ms-answer-wrap','ms-reveal','ms-prev','ms-next','ms-bn','ms-en','ms-language-label','ms-student-label','ms-counsellor-label'];
  const missing=required.filter(id=>!$(id));
  if(missing.length){const p=document.createElement('p');p.className='ms-runtime-error';p.textContent='Roleplay could not start. Missing: '+missing.join(', ');root.appendChild(p);return}
- const answerBox=$('ms-answer'),disclosure=$('ms-answer-wrap'),selector=$('ms-case');
+ const answerBox=$('ms-answer'),disclosure=$('ms-answer-wrap');
  function render(){
   const item=(language==='en'?en:cases)[current];
-  Array.from(selector.options).forEach((o,i)=>{o.textContent=(language==='en'?enLabels:bnLabels)[i]||o.textContent});
-  selector.value=String(current);$('ms-question').textContent=item.q;$('ms-prompt').textContent=item.p;
+  $('ms-scenario-count').textContent=(language==='en'?'Scenario ':'পরিস্থিতি ')+(current+1)+' / '+cases.length;
+  $('ms-scenario-title').textContent=(language==='en'?enLabels:bnLabels)[current];
+  $('ms-question').textContent=item.q;$('ms-prompt').textContent=item.p;
   answerBox.innerHTML='<h4>Model Counsellor Answer</h4><p></p><p><b></b> <span></span></p>';
   answerBox.querySelector('p').textContent=item.a;
   answerBox.querySelector('b').textContent=language==='en'?'Next follow-up:':'পরবর্তী Follow-up:';
   answerBox.querySelector('span').textContent=item.f;disclosure.open=false;
   $('ms-reveal').textContent=language==='en'?'Show Model Counsellor Answer':'Model Answer দেখুন';
-  $('ms-prev').textContent='← Previous';$('ms-next').textContent='Next Scenario →';
+  $('ms-prev').textContent=language==='en'?'← Previous':'← Previous';
+  $('ms-next').textContent=language==='en'?'Next Scenario →':'Next Scenario →';
   $('ms-prev').disabled=current===0;$('ms-next').disabled=current===cases.length-1;
   $('ms-language-label').textContent=language==='en'?'Conversation language':'কথোপকথনের ভাষা';
   $('ms-student-label').textContent='🎭 STUDENT';$('ms-counsellor-label').textContent='🎓 COUNSELLOR';
@@ -50,12 +52,12 @@ function initRoleplay(){
   $('ms-bn').setAttribute('aria-pressed',String(language==='bn'));$('ms-en').setAttribute('aria-pressed',String(language==='en'));
  }
  $('ms-bn').addEventListener('click',()=>{language='bn';render()});$('ms-en').addEventListener('click',()=>{language='en';render()});
- selector.addEventListener('change',()=>{current=Math.max(0,Math.min(cases.length-1,Number(selector.value)||0));render()});
  $('ms-prev').addEventListener('click',()=>{if(current>0){current--;render()}});
  $('ms-next').addEventListener('click',()=>{if(current<cases.length-1){current++;render()}});
  disclosure.addEventListener('toggle',()=>{$('ms-reveal').textContent=disclosure.open?(language==='en'?'Hide Model Answer':'Model Answer লুকান'):(language==='en'?'Show Model Counsellor Answer':'Model Answer দেখুন')});
- let startX=0;root.addEventListener('touchstart',e=>{if(e.changedTouches&&e.changedTouches.length)startX=e.changedTouches[0].clientX},{passive:true});
- root.addEventListener('touchend',e=>{if(!e.changedTouches||!e.changedTouches.length)return;const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>90){language=dx<0?'en':'bn';render()}},{passive:true});
+ let startX=0;const languageBar=root.querySelector('.ms-language');
+ languageBar.addEventListener('touchstart',e=>{if(e.changedTouches&&e.changedTouches.length)startX=e.changedTouches[0].clientX},{passive:true});
+ languageBar.addEventListener('touchend',e=>{if(!e.changedTouches||!e.changedTouches.length)return;const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>70){language=dx<0?'en':'bn';render()}},{passive:true});
  render();
 }
 try{initRoleplay()}catch(err){const root=$('ms-roleplay');if(root){const p=document.createElement('p');p.className='ms-runtime-error';p.textContent='Roleplay error: '+(err&&err.message?err.message:'Unable to initialise');root.appendChild(p)}}
