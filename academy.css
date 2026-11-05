@@ -248,3 +248,5 @@ body{background:radial-gradient(ellipse at 80% 0%,rgba(126,88,205,.17),transpare
 @media(min-width:1100px){
  #master-menu-panel{left:276px;top:50%;transform:translateY(-50%);width:230px}
 }
+
+#master-nav .nav-submenu{display:none!important}
