@@ -68,7 +68,7 @@ html{scroll-padding-top:16px}
  #nav .nav-home{margin:0}
  #nav .nav-dropdown{flex:none}
  #nav .nav-dropdown>summary{white-space:nowrap;padding:5px 10px}
- #nav .nav-submenu{position:absolute;top:calc(100% + 5px);left:0;min-width:180px;padding:8px;background:var(--card);border:1px solid var(--bd);border-radius:13px;box-shadow:var(--sh);z-index:50}
+ #nav .nav-submenu{position:fixed;top:calc(env(safe-area-inset-top,0px) + 58px);left:8px;min-width:190px;padding:8px;background:var(--card);border:1px solid var(--bd);border-radius:13px;box-shadow:var(--sh);z-index:60}
  #nav .nav-tools{display:flex;flex:none;margin:0}
  #nav .nav-tools a{white-space:nowrap}
 }
