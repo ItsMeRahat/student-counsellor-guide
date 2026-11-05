@@ -5,7 +5,7 @@ const KEY='rahat-counsellor-academy-v1';
 const modules=[
 ['s1','সম্পূর্ণ Workflow'],['s2','Student Calling'],['s3','Profile Assessment'],['s4','University Research'],
 ['s5','Documentation'],['s6','Application & Visa'],['s7','CRM & Reporting'],['s8','Software'],
-['s9','CRM Document Handling'],['s10','Excel, PDF & Email'],['s11','৫ দিনের Schedule'],['s12','Excel Guide']
+['s9','CRM Document Handling'],['s10','Excel, PDF & Email'],['s11','৫ দিনের Schedule'],['s12','Excel Guide'],['s13','Malaysia Counselling Roleplay']
 ];
 const read=()=>{try{return JSON.parse(localStorage.getItem(KEY))||{done:[]}}catch(e){return{done:[]}}};
 let state=read();
